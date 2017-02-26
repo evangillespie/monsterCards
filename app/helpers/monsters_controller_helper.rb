@@ -1,0 +1,2 @@
+module MonstersControllerHelper
+end
