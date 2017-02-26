@@ -1,0 +1,2 @@
+class MonsterSet < ApplicationRecord
+end
