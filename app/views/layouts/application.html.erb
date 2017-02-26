@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MonsterCards</title>
+    <title>Monster Cards</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,25 @@
   </head>
 
   <body>
+    <header class="bg-black ph3 pv3">
+      <nav>
+        <a class="link white dib mr3" href="/">D&D 5E Monsters</a>
+        <a class="link white dib ml3 fr" href="#">Filter</a>
+      </nav>
+    </header>
+
+    <form class="bg-light-red center ph2 pv2">
+      <fieldset class="cf bn ma0 pa0">
+        <div class="cf">
+          <label class="clip" for="search">Search</label>
+
+          <input class="f6 input-reset bn fl black-80 bg-white pa2 lh-solid br2 br--left w-80" placeholder="Search" type="text" name="search" value="" id="search">
+          <input class="f6 button-reset fl pv2 tc bn bg-black hover-bg-black white pointer br2 br--right w-20" type="submit" value="Search">
+
+        </div>
+      </fieldset>
+    </form>
+
     <%= yield %>
   </body>
 </html>

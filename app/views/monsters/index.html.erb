@@ -1,1 +1,10 @@
-asdfasfasfasdf
+<article>
+  <ul class="list pl0 ml0 center bb b--light-silver mt0">
+    <% @monsters.each do |monster| %>
+      <li class="bb b--light-silver">
+        <%= link_to monster.name, monster_path(monster), class: 'db link near-black ph2 pv3' %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</article>
