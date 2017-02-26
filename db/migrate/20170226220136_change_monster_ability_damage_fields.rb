@@ -3,8 +3,8 @@ class ChangeMonsterAbilityDamageFields < ActiveRecord::Migration[5.0]
     reversible do |dir|
       change_table :monster_abilities do |t|
         dir.up do
-          t.change :attack_bonus, 'integer USING CAST(column_name AS integer)'
-          t.change :damage_bonus, 'integer USING CAST(column_name AS integer)'
+          t.change :attack_bonus, 'integer USING CAST(attack_bonus AS integer)'
+          t.change :damage_bonus, 'integer USING CAST(damage_bonus AS integer)'
         end
         dir.down do
           t.change :attack_bonus, :string
