@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170226220136) do
+ActiveRecord::Schema.define(version: 20170226224626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "monster_abilities", force: :cascade do |t|
     t.integer  "monster_id"
-    t.string   "type"
+    t.string   "ability_type"
     t.string   "name"
     t.string   "desc"
     t.integer  "attack_bonus"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170226220136) do
   create_table "monsters", force: :cascade do |t|
     t.string  "name"
     t.string  "size"
-    t.string  "type"
+    t.string  "monster_type"
     t.string  "subtype"
     t.string  "alignment"
     t.integer "hp"
