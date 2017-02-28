@@ -9,22 +9,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header class="bg-black ph3 pv3">
-      <nav>
-        <a class="link white dib mr3" href="/">D&D 5E Monsters</a>
-        <a class="link white dib ml3 fr" href="#">Filter</a>
+  <body class="bg-near-white">
+    <nav class="pv3">
+      <a href="#maincontent" class="link">Skip to Main Content</a>
+    </nav>
+    <header class="bg-near-black ph2 pv3 w-100 fixed top-0 right-0">
+      <nav class="tc">
+        <a class="link white dib fl" href="#">Back</a>
+        <a class="link white dib" href="#"><h1 class="f5 normal ma0">D&D 5E SRD</h1></a>
+        <a class="link white dib fr" href="#">Filter</a>
       </nav>
     </header>
 
+    <h2 class="clip">Search</h2>
     <form class="bg-light-red center ph2 pv2">
       <fieldset class="cf bn ma0 pa0">
-        <div class="cf">
+        <div class="cf tc">
           <label class="clip" for="search">Search</label>
-
-          <input class="f6 input-reset bn fl black-80 bg-white pa2 lh-solid br2 br--left w-80" placeholder="Search" type="text" name="search" value="" id="search">
-          <input class="f6 button-reset fl pv2 tc bn bg-black hover-bg-black white pointer br2 br--right w-20" type="submit" value="Search">
-
+          <input class="f6 input-reset bn pa1 lh-solid br2 w-100 tc" placeholder="Search Monsters" type="text" name="search" value="" id="search">
+          <input class="f6 button-reset pv1 bn bg-black white pointer br2 w-100 mt1 clip" type="submit" value="Search">
         </div>
       </fieldset>
     </form>
