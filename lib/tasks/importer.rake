@@ -166,6 +166,120 @@ namespace :importer do
       damage_dice: "2d6",
       damage_bonus: 10
     )
-
   end
-end
+
+
+  desc "Import the SRD monsters from the dropbox file that Colin found by parsing JSON and adding monsters to the database"
+  task set1_5e_srd_monsters: :environment do
+
+    file = File.read(File.join(Rails.root, 'lib', 'tasks', 'assets', '5e-SRD-Monsters.json'))
+    monster_list = JSON.parse(file)
+
+    set = MonsterSet.create(
+      system: "5e",
+      source: "JSON file that Colin found on reddit of SRD monsters",
+      desc: "Set of all 5e monsters that are included in the SRD"
+    )
+
+    # a map to translate keys from the json sytax to the one in our db
+    key_mapping = {
+      "type" => "monster_type",
+      "challenge_rating" => "cr",
+      "hit_points" => "hp",
+
+      "armor_class" => "ac",
+      "strength" => "str",
+      "dexterity" => "dex",
+      "constitution" => "con",
+      "intelligence" => "int",
+      "wisdom" => "wis",
+      "charisma" => "cha"
+    }
+
+    ability_key_mapping = {
+      "special_abilities" => "special",
+      "actions" => "action",
+      "legendary_actions" => "legendary",
+      "reactions" => "reaction"
+    }
+    save_key_mapping = {
+      "strength_save" => "str",
+      "dexterity_save" => "dex",
+      "constitution_save" => "con",
+      "intelligence_save" => "int",
+      "wisdom_save" => "wis",
+      "charisma_save" => "cha"
+    }
+    skill_keys = [
+      "acrobatics",
+      "arcana",
+      "athletics",
+      "deception",
+      "history",
+      "insight",
+      "intimidation",
+      "investigation",
+      "medicine",
+      "nature",
+      "perception",
+      "performance",
+      "persuasion",
+      "religion",
+      "stealth",
+      "survival"
+    ]
+
+    monster_list.each do |monster|
+      #create a monster, mapping values from the JSON to the Monster object
+      m = Monster.new
+      m.monster_set_id = set.id
+      saves = {}
+      skills = {}
+      monster.each do |key, value|
+        if m.attributes.keys.include?(key)
+          m[key] = value
+        elsif key_mapping.keys.include?(key)
+          m[key_mapping[key]] = value
+        elsif save_key_mapping.keys.include?(key)
+          saves[save_key_mapping[key]] = value
+        elsif skill_keys.include?(key)
+          skills[key] = value
+        elsif ability_key_mapping.keys.include?(key)
+          # do nothing. we'll deal with it after saving the monster
+        else
+          raise "Found a weird key in your monster: #{key}"
+        end
+      end
+      m.saving_throws = saves
+      m.skills = skills
+      m.save!
+
+      # create all the monster abilities      
+      ability_key_mapping.each do |ability_key, ability_type_name|
+        if monster.key?(ability_key)
+          monster[ability_key].each do |ability|
+            create_ability_from_hash(m['id'], ability_type_name, ability)
+          end
+        end
+      end
+      puts "Added monster: #{m.name}"
+    end
+
+  end #task
+
+  #
+  # create an ability from the hash provided
+  #
+  def create_ability_from_hash(monster_id, ability_type, ability)
+    a = MonsterAbility.create(
+      monster_id: monster_id,
+      ability_type: ability_type,
+      name: ability['name'],
+      desc: ability['desc'],
+      attack_bonus: ability.key?('attack_bonus') ? ability['attack_bonus'] : nil,
+      damage_dice: ability.key?('damage_dice') ? ability['damage_dice'] : nil,
+      damage_bonus:ability.key?('damage_bonus') ? ability['damage_bonus'] : nil
+    )
+  end
+
+end #namespace
