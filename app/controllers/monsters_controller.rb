@@ -5,6 +5,8 @@ class MonstersController < ApplicationController
   end
 
   def show
-    @monster = Monster.find(params[:id])
+    @monster = Monster.
+      includes(:monster_abilities).
+      find(params[:id])
   end
 end
