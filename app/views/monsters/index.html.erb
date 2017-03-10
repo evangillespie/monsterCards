@@ -1,10 +1,13 @@
 <article id="maincontent">
   <ul class="list pl0 ma0">
     <% @monsters.each do |monster| %>
-      <li class="bb b--light-silver">
+      <li class="bb b--light-silver bg-white">
         <%= link_to monster.name, monster_path(monster), class: 'db link near-black ph2 pv3' %>
         </a>
       </li>
     <% end %>
   </ul>
 </article>
+<footer class="ph2 pv3 bg-black white tc-ns">
+  Monster from <a href="#" class="white">D&D 5E SRD</a>
+</footer>
