@@ -1,71 +1,72 @@
-<article>
-  <h2 class="mv0 f2 lh-title athelas"><%= @monster.name %></h2>
-  <p class="i mt0 lh-copy "><%= "#{@monster.size} #{@monster.monster_type} (#{@monster.subtype}), #{@monster.alignment}" %></p>
+<article class="pv2-ns measure center">
+  <div class="pa2 ba-ns bw2-ns b--black br3-ns bg-white">
+    <h2 class="mv0 f2 lh-title athelas"><%= @monster.name %></h2>
+    <p class="i mt0 lh-copy "><%= "#{@monster.size} #{@monster.monster_type} (#{@monster.subtype}), #{@monster.alignment}" %></p>
 
-  <section class="bt bw2">
-    <dl class="lh-copy">
-      <dt class="fl b mr1">Armor Class</dt>
-      <dd class="ml0"><%= @monster.ac %></dd>
-      <dt class="fl b mr1">Hit Points</dt> 
-      <dd class="ml0"><%= "#{@monster.hp} (#{@monster.hit_dice})" %></dd>
-      <dt class="fl b mr1">Speed</dt>
-      <dd class="ml0"><%= @monster.speed %></dd>
-    </dl>
-  </section>
+    <section class="bt bw2">
+      <dl class="lh-copy">
+        <dt class="fl b mr1">Armor Class</dt>
+        <dd class="ml0"><%= @monster.ac %></dd>
+        <dt class="fl b mr1">Hit Points</dt> 
+        <dd class="ml0"><%= "#{@monster.hp} (#{@monster.hit_dice})" %></dd>
+        <dt class="fl b mr1">Speed</dt>
+        <dd class="ml0"><%= @monster.speed %></dd>
+      </dl>
+    </section>
 
-  <section class="bt bw2 f4-ns f5">
-    <table class="mv3 w-100 lh-solid">
-      <caption class="clip">Ability Scores</caption>
-      <tr class="tc">
-        <th>STR</th>
-        <th>DEX</th>
-        <th>CON</th>
-        <th>INT</th>
-        <th>WIS</th>
-        <th>CHA</th>
-      </tr>
-      <tr class="tc tracked-tight">
-        <td><%= @monster.str %></td>
-        <td><%= @monster.dex %></td>
-        <td><%= @monster.con %></td>
-        <td><%= @monster.int %></td>
-        <td><%= @monster.wis %></td>
-        <td><%= @monster.cha %></td>
-      </tr>
-    </table>
-  </section>
+    <section class="bt bw2 f4-ns f5">
+      <table class="mv3 w-100 lh-solid">
+        <caption class="clip">Ability Scores</caption>
+        <tr class="tc">
+          <th>STR</th>
+          <th>DEX</th>
+          <th>CON</th>
+          <th>INT</th>
+          <th>WIS</th>
+          <th>CHA</th>
+        </tr>
+        <tr class="tc tracked-tight">
+          <td><%= @monster.str %></td>
+          <td><%= @monster.dex %></td>
+          <td><%= @monster.con %></td>
+          <td><%= @monster.int %></td>
+          <td><%= @monster.wis %></td>
+          <td><%= @monster.cha %></td>
+        </tr>
+      </table>
+    </section>
 
-  <section class="bt bw2">
-    <dl class="lh-copy">
-      <dt class="fl b mr1">Skills</dt>
-      <dd class="ml0"><%= @monster.skills %></dd>
-      <dt class="fl b mr1">Senses</dt>
-      <dd class="ml0"><%= @monster.senses %></dd>
-      <dt class="fl b mr1">Languages</dt>
-      <dd class="ml0"><%= @monster.languages %></dd>
-      <dt class="fl b mr1">Challenge</dt>
-      <dd class="ml0">TODO: not sure what goes huur</dd>
-    </dl>
-  </section>
+    <section class="bt bw2">
+      <dl class="lh-copy">
+        <dt class="fl b mr1">Skills</dt>
+        <dd class="ml0"><%= @monster.skills %></dd>
+        <dt class="fl b mr1">Senses</dt>
+        <dd class="ml0"><%= @monster.senses %></dd>
+        <dt class="fl b mr1">Languages</dt>
+        <dd class="ml0"><%= @monster.languages %></dd>
+        <dt class="fl b mr1">Challenge</dt>
+        <dd class="ml0">TODO: not sure what goes huur</dd>
+      </dl>
+    </section>
 
-  <h2 class="mt0 mb2 f2 lh-title athelas pt2">Actions</h2>
+    <h2 class="mt0 mb2 f2 lh-title athelas pt2">Actions</h2>
 
-  <section class="bt bw2">
-    <dl class="lh-copy">
-      <% @monster.monster_abilities.each do |ability| %>
-        <dt class="fl b mr1"><%= ability.name %></dt>
-        <dd class="ml0"><%= ability.desc %></dd>
-      <% end %>
-    </dl>
-  </section>
+    <section class="bt bw2">
+      <dl class="lh-copy">
+        <% @monster.monster_abilities.each do |ability| %>
+          <dt class="fl b mr1"><%= ability.name %></dt>
+          <dd class="ml0 mb3"><%= ability.desc %></dd>
+        <% end %>
+      </dl>
+    </section>
 
-  <aside class="bt bw2">
-    <p class="lh-copy">TODO: not sure what goes huur</p>
-  </aside>
-
-  <footer class="ph2 pv3 bg-near-black white">
-    <a href="#" class="white"><%= @monster.name %></a> 
-    from 
-    <a href="#" class="white">D&D 5E SRD</a>
-  </footer>
+    <aside class="bt bw2">
+      <p class="lh-copy">TODO: not sure what goes huur</p>
+    </aside>
+  </div>
 </article>
+<footer class="ph2 pv3 bg-black white tc-ns">
+  <a href="#" class="white"><%= @monster.name %></a> 
+  from 
+  <a href="#" class="white">D&D 5E SRD</a>
+</footer>
