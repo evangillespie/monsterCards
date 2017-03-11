@@ -49,20 +49,51 @@
       </dl>
     </section>
 
-    <h2 class="mt0 mb2 f3 lh-title pt2">Actions</h2>
+    <% if @monster.monster_abilities.where(ability_type: "special").count > 0 %>
+      <section class="bt bw2">
+        <dl class="lh-copy">
+          <% @monster.monster_abilities.where(ability_type: "special").each do |ability| %>
+            <dt class="fl b mr1"><%= ability.name %></dt>
+            <dd class="ml0 mb3"><%= ability.desc %></dd>
+          <% end %>
+        </dl>
+      </section>
+    <% end %>
 
+    <h2 class="mt0 mb2 f3 lh-title pt2">Actions</h2>
     <section class="bt bw2">
       <dl class="lh-copy">
-        <% @monster.monster_abilities.each do |ability| %>
+        <% @monster.monster_abilities.where(ability_type: "action").each do |ability| %>
           <dt class="fl b mr1"><%= ability.name %></dt>
           <dd class="ml0 mb3"><%= ability.desc %></dd>
         <% end %>
       </dl>
     </section>
 
-    <aside class="bt bw2">
-      <p class="lh-copy">TODO: not sure what goes huur</p>
-    </aside>
+    <% if @monster.monster_abilities.where(ability_type: "legendary").count > 0 %>
+      <h2 class="mt0 mb2 f3 lh-title pt2">Legendary Actions</h2>
+      <section class="bt bw2">
+        <dl class="lh-copy">
+          <% @monster.monster_abilities.where(ability_type: "legendary").each do |ability| %>
+            <dt class="fl b mr1"><%= ability.name %></dt>
+            <dd class="ml0 mb3"><%= ability.desc %></dd>
+          <% end %>
+        </dl>
+      </section>
+    <% end %>
+
+    <% if @monster.monster_abilities.where(ability_type: "reaction").count > 0 %>
+      <h2 class="mt0 mb2 f3 lh-title pt2">Reactions</h2>
+      <section class="bt bw2">
+        <dl class="lh-copy">
+          <% @monster.monster_abilities.where(ability_type: "reaction").each do |ability| %>
+            <dt class="fl b mr1"><%= ability.name %></dt>
+            <dd class="ml0 mb3"><%= ability.desc %></dd>
+          <% end %>
+        </dl>
+      </section>
+    <% end %>
+
     <footer class="bt bw2 lh-copy">
       <p><a href="#" class="black hover-bg-washed-yellow"><%= @monster.name %></a> 
       from 
