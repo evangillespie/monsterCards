@@ -1,5 +1,5 @@
-<article class="pv2-ns measure center">
-  <div class="pv4-ns pa2 ph4-ns  ba-ns bw2-ns b--black br3-ns bg-white">
+<article class="ma0-ns ma2 ba bw2 br3 bw0-ns">
+  <div class="pt4-ns pb3-ns ph4-ns mv2-ns pa3 pb1 center measure ba-ns bw2-ns b--black br3-ns bg-white shadow-2">
     <h2 class="mv0 f2 lh-title athelas"><%= @monster.name %></h2>
     <p class="i mt0 lh-copy "><%= "#{@monster.size} #{@monster.monster_type} (#{@monster.subtype}), #{@monster.alignment}" %></p>
 
@@ -63,10 +63,10 @@
     <aside class="bt bw2">
       <p class="lh-copy">TODO: not sure what goes huur</p>
     </aside>
+    <footer class="bt bw2 lh-copy">
+      <p><a href="#" class="black hover-bg-washed-yellow"><%= @monster.name %></a> 
+      from 
+      <a href="#" class="black hover-bg-washed-yellow">D&D 5E SRD</a></p>
+    </footer>
   </div>
 </article>
-<footer class="ph2 pv3 bg-black white tc-ns">
-  <a href="#" class="white"><%= @monster.name %></a> 
-  from 
-  <a href="#" class="white">D&D 5E SRD</a>
-</footer>
