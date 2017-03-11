@@ -38,12 +38,18 @@
 
     <section class="bt bw2">
       <dl class="lh-copy">
-        <dt class="fl b mr1">Skills</dt>
-        <dd class="ml0"><%= @monster.skills %></dd>
-        <dt class="fl b mr1">Senses</dt>
-        <dd class="ml0"><%= @monster.senses %></dd>
+        <% if @monster.skills.length > 0 %>
+          <dt class="fl b mr1">Skills</dt>
+          <dd class="ml0">
+          <% @monster.skills.each_with_index do |(skill_type, skill_bonus), index| %><%= "#{skill_type.capitalize}: +#{skill_bonus}" %><%= ", " if index < @monster.skills.length-1 %><% end %>
+          </dd>
+        <% end %>
+        <% if @monster.senses? %>
+          <dt class="fl b mr1">Senses</dt>
+          <dd class="ml0"><%= @monster.senses.capitalize %></dd>
+        <% end %>
         <dt class="fl b mr1">Languages</dt>
-        <dd class="ml0"><%= @monster.languages %></dd>
+        <dd class="ml0"><%= @monster.languages != "" ? @monster.languages.capitalize : "None" %></dd>
         <dt class="fl b mr1">Challenge</dt>
         <dd class="ml0"><%= @monster.cr %></dd>
       </dl>
