@@ -2,7 +2,7 @@ class MonstersController < ApplicationController
 
   def index
     if params[:search]
-      @monsters = Monster.where("name like ?", '%' + params[:search] + '%')
+      @monsters = Monster.where("name ilike ?", '%' + params[:search] + '%')
     else
       @monsters = Monster.all
     end
