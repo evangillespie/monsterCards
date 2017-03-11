@@ -1,7 +1,7 @@
 <article class="ma0-ns ma2 ba bw2 br3 bw0-ns">
   <div class="pt4-ns pb3-ns ph4-ns mv2-ns pa3 pb1 center measure ba-ns bw2-ns b--black br3-ns bg-white shadow-2">
     <h2 class="mv0 f2 lh-title"><%= @monster.name %></h2>
-    <p class="i mt0 lh-copy "><%= "#{@monster.size} #{@monster.monster_type} (#{@monster.subtype}), #{@monster.alignment}" %></p>
+    <p class="i mt0 lh-copy "><%= "#{@monster.size} #{@monster.monster_type}" %><%= " (#{@monster.subtype})" if @monster.subtype?%><%=", #{@monster.alignment}" %></p>
 
     <section class="bt bw2">
       <dl class="lh-copy">
@@ -45,7 +45,7 @@
         <dt class="fl b mr1">Languages</dt>
         <dd class="ml0"><%= @monster.languages %></dd>
         <dt class="fl b mr1">Challenge</dt>
-        <dd class="ml0">TODO: not sure what goes huur</dd>
+        <dd class="ml0"><%= @monster.cr %></dd>
       </dl>
     </section>
 
