@@ -1,12 +1,10 @@
 <article id="maincontent">
-  <ul class="list ph2 mb0" style="margin-bottom: -10px;">
+  <ul class="list ph2 mb0" style="margin-top:0.6rem;">
     <% @monsters.each do |monster| %>
-      <li class="db measure center" style="margin-top:-6px;">
-        <%= link_to monster.name, monster_path(monster), class: 'db link black ph2 pv3 hover-bg-washed-yellow ba bw2 b--black bg-white br3 br--top fw6 shadow-2' %>
+      <li class="db measure center" style="margin-top:-0.6rem;">
+        <%= link_to monster.name, monster_path(monster), class: 'db link black ph2 pv3 hover-bg-washed-yellow ba bw2 b--black bg-white br3 fw6 shadow-2' %>
         </a>
       </li>
     <% end %>
   </ul>
 </article>
-<div class="bg-black ph2 pv3 center shadow-2" style="width: 32rem;">
-</div>
