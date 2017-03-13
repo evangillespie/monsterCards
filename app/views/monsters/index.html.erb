@@ -1,10 +1,18 @@
-<article id="maincontent">
-  <ul class="list ph2 mb0" style="margin-top:0.6rem;">
+<article id="monster-list">
+  <ul class="list ph2 pb2 mb0" style="margin-top:0.6rem;">
     <% @monsters.each do |monster| %>
       <li class="db measure center" style="margin-top:-0.6rem;">
-        <%= link_to monster.name, monster_path(monster), class: 'db link black ph2 pv3 hover-bg-washed-yellow ba bw2 b--black bg-white br3 fw6 shadow-2' %>
+        <%= link_to monster.name, monster_path(monster), class: 'monster-name db link black ph2 pv3 hover-bg-washed-yellow ba bw2 b--black bg-white br3 fw6 shadow-2' %>
         </a>
       </li>
     <% end %>
   </ul>
 </article>
+<%= javascript_tag do %>
+  var options = { valueNames: ['monster-name'] }
+	var listObj = new List('monster-list', options);
+	$('#search').on('keyup', function() {
+		var searchString = $(this).val();
+		listObj.search(searchString);
+	});
+<% end %>

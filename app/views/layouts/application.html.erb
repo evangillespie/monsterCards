@@ -4,28 +4,24 @@
     <title>Monster Cards</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://use.fontawesome.com/a3bc059582.js"></script>
   </head>
 
   <body class="bg-washed-green pt6 avenir">
 
     <header class="fixed bg-black top-0 left-0 w-100">
       <nav class="tc pv3 ph2 measure center relative">
-        <a class="link white dib fl absolute top-0 left-0 ph3 pv3" href="javascript:history.back()">
-          <i class="fa fa-chevron-left" aria-hidden="true"></i> Back
-        </a>
+        <a class="link white dib fl absolute top-0 left-0 ph2 pv3" href="javascript:history.back()">Back</a>
         <a class="link white dib" href="/"><h1 class="f5 normal ma0">D&D 5E SRD</h1></a>
       </nav>
 
       <h2 class="clip">Search</h2>
-      <form class="pv2 ph0 bb bw2  b--black bg-washed-red shadow-2">
+      <form class="pv2 ph2 bb bw2  b--black bg-washed-red shadow-2">
         <fieldset class="cf bn pa0">
           <div class="cf tc measure center">
             <label class="clip" for="search">Search</label>
-            <input class="input-reset pa2 tc w-100 br3 ba bw2 b--black" placeholder="Search Monsters" type="text" name="search" value="" id="search">
+            <input class="input-reset pa2 tc w-100 br3 ba bw2 b--black" placeholder="Search Monsters" type="text" name="search" value="" id="search" autocomplete="off">
             <!-- hidden submit button for accessibility -->
             <input class="f6 button-reset pv1 bn bg-black white pointer br2 w-100 mt1 clip" type="submit" value="Search">
           </div>
