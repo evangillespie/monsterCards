@@ -26,12 +26,12 @@
           <th>CHA</th>
         </tr>
         <tr class="tc tracked-tight">
-          <td><%= @monster.str %></td>
-          <td><%= @monster.dex %></td>
-          <td><%= @monster.con %></td>
-          <td><%= @monster.int %></td>
-          <td><%= @monster.wis %></td>
-          <td><%= @monster.cha %></td>
+          <td><%= @monster.str %> (<%= sprintf("%+d", @monster.ability_mod(@monster.str)) %>)</td>
+          <td><%= @monster.dex %> (<%= sprintf("%+d", @monster.ability_mod(@monster.dex)) %>)</td>
+          <td><%= @monster.con %> (<%= sprintf("%+d", @monster.ability_mod(@monster.con)) %>)</td>
+          <td><%= @monster.int %> (<%= sprintf("%+d", @monster.ability_mod(@monster.int)) %>)</td>
+          <td><%= @monster.wis %> (<%= sprintf("%+d", @monster.ability_mod(@monster.wis)) %>)</td>
+          <td><%= @monster.cha %> (<%= sprintf("%+d", @monster.ability_mod(@monster.cha)) %>)</td>
         </tr>
       </table>
     </section>
