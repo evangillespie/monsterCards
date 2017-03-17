@@ -8,11 +8,10 @@
     <% end %>
   </ul>
 </article>
-<%= javascript_tag do %>
-  var options = { valueNames: ['monster-name'] }
-	var listObj = new List('monster-list', options);
-	$('#search').on('keyup', function() {
-		var searchString = $(this).val();
-		listObj.search(searchString);
-	});
-<% end %>
+
+<script>
+  $(document).ready(function() {
+    monsters.init();
+  });
+</script>
+
