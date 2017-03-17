@@ -50,6 +50,22 @@
         <% end %>
         <dt class="fl b mr1">Languages</dt>
         <dd class="ml0"><%= @monster.languages != "" ? @monster.languages.capitalize : "None" %></dd>
+        <% if @monster.damage_vulnerabilities.length >0  %>
+          <dt class="fl b mr1">Damage Vulnerabilities</dt>
+            <dd class="ml0"><%= @monster.damage_vulnerabilities %></dd>
+        <% end %>
+        <% if @monster.damage_resistances.length >0  %>
+          <dt class="fl b mr1">Damage Resistances</dt>
+            <dd class="ml0"><%= @monster.damage_resistances %></dd>
+        <% end %>
+         <% if @monster.damage_immunities.length >0  %>
+          <dt class="fl b mr1">Damage Immunities</dt>
+            <dd class="ml0"><%= @monster.damage_immunities %></dd>
+        <% end %>
+         <% if @monster.condition_immunities.length >0  %>
+          <dt class="fl b mr1">Condition Immunities</dt>
+            <dd class="ml0"><%= @monster.condition_immunities %></dd>
+        <% end %>
         <dt class="fl b mr1">Challenge</dt>
         <dd class="ml0"><%= @monster.cr %></dd>
       </dl>
