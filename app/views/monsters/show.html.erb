@@ -14,10 +14,10 @@
       </dl>
     </section>
 
-    <section class="bt bw2 f4-ns f5">
+    <section class="bt bw2">
       <table class="mv3 w-100 lh-solid">
         <caption class="clip">Ability Scores</caption>
-        <tr class="tc">
+        <tr class="tc f4-ns">
           <th>STR</th>
           <th>DEX</th>
           <th>CON</th>
@@ -26,12 +26,12 @@
           <th>CHA</th>
         </tr>
         <tr class="tc tracked-tight">
-          <td><%= @monster.str %></td>
-          <td><%= @monster.dex %></td>
-          <td><%= @monster.con %></td>
-          <td><%= @monster.int %></td>
-          <td><%= @monster.wis %></td>
-          <td><%= @monster.cha %></td>
+          <td><strong class="fw6"><%= @monster.str %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.str)) %>)</span></span></td>
+          <td><strong class="fw6"><%= @monster.dex %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.dex)) %>)</span></td>
+          <td><strong class="fw6"><%= @monster.con %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.con)) %>)</span></td>
+          <td><strong class="fw6"><%= @monster.int %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.int)) %>)</span></td>
+          <td><strong class="fw6"><%= @monster.wis %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.wis)) %>)</strong></span></td>
+          <td><strong class="fw6"><%= @monster.cha %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.cha)) %>)</span></td>
         </tr>
       </table>
     </section>
@@ -50,6 +50,22 @@
         <% end %>
         <dt class="fl b mr1">Languages</dt>
         <dd class="ml0"><%= @monster.languages != "" ? @monster.languages.capitalize : "None" %></dd>
+        <% if @monster.damage_vulnerabilities.length >0  %>
+          <dt class="fl b mr1">Damage Vulnerabilities</dt>
+            <dd class="ml0"><%= @monster.damage_vulnerabilities %></dd>
+        <% end %>
+        <% if @monster.damage_resistances.length >0  %>
+          <dt class="fl b mr1">Damage Resistances</dt>
+            <dd class="ml0"><%= @monster.damage_resistances %></dd>
+        <% end %>
+         <% if @monster.damage_immunities.length >0  %>
+          <dt class="fl b mr1">Damage Immunities</dt>
+            <dd class="ml0"><%= @monster.damage_immunities %></dd>
+        <% end %>
+         <% if @monster.condition_immunities.length >0  %>
+          <dt class="fl b mr1">Condition Immunities</dt>
+            <dd class="ml0"><%= @monster.condition_immunities %></dd>
+        <% end %>
         <dt class="fl b mr1">Challenge</dt>
         <dd class="ml0"><%= @monster.cr %></dd>
       </dl>

@@ -1,3 +1,7 @@
+<%= content_for :search_bar do  %>
+  <%= render 'search_bar' %>
+<% end %>
+
 <article id="monster-list">
   <ul class="list ph2 pb2 mb0" style="margin-top:0.6rem;">
     <% @monsters.each do |monster| %>
