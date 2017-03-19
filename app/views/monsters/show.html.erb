@@ -26,12 +26,13 @@
           <th>CHA</th>
         </tr>
         <tr class="tc tracked-tight">
-          <td><strong class="fw6"><%= @monster.str %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.str)) %>)</span></span></td>
-          <td><strong class="fw6"><%= @monster.dex %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.dex)) %>)</span></td>
-          <td><strong class="fw6"><%= @monster.con %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.con)) %>)</span></td>
-          <td><strong class="fw6"><%= @monster.int %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.int)) %>)</span></td>
-          <td><strong class="fw6"><%= @monster.wis %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.wis)) %>)</strong></span></td>
-          <td><strong class="fw6"><%= @monster.cha %></strong> <span class="gray">(<%= sprintf("%+d", @monster.ability_mod(@monster.cha)) %>)</span></td>
+          <td>
+            <small class="gray"><%= @monster.str %></small> <strong class="fw5">(<%= sprintf("%+d", @monster.ability_mod(@monster.str)) %>)</strong class="fw5"></td>
+          <td><small class="gray"><%= @monster.dex %></small> <strong class="fw5">(<%= sprintf("%+d", @monster.ability_mod(@monster.dex)) %>)</strong class="fw5"></td>
+          <td><small class="gray"><%= @monster.con %></small> <strong class="fw5">(<%= sprintf("%+d", @monster.ability_mod(@monster.con)) %>)</strong class="fw5"></td>
+          <td><small class="gray"><%= @monster.int %></small> <strong class="fw5">(<%= sprintf("%+d", @monster.ability_mod(@monster.int)) %>)</strong class="fw5"></td>
+          <td><small class="gray"><%= @monster.wis %></small> <strong class="fw5">(<%= sprintf("%+d", @monster.ability_mod(@monster.wis)) %>)</strong class="fw5"></td>
+          <td><small class="gray"><%= @monster.cha %></small> <strong class="fw5">(<%= sprintf("%+d", @monster.ability_mod(@monster.cha)) %>)</strong class="fw5"></td>
         </tr>
       </table>
     </section>
@@ -50,22 +51,6 @@
         <% end %>
         <dt class="fl b mr1">Languages</dt>
         <dd class="ml0"><%= @monster.languages != "" ? @monster.languages.capitalize : "None" %></dd>
-        <% if @monster.damage_vulnerabilities.length >0  %>
-          <dt class="fl b mr1">Damage Vulnerabilities</dt>
-            <dd class="ml0"><%= @monster.damage_vulnerabilities %></dd>
-        <% end %>
-        <% if @monster.damage_resistances.length >0  %>
-          <dt class="fl b mr1">Damage Resistances</dt>
-            <dd class="ml0"><%= @monster.damage_resistances %></dd>
-        <% end %>
-         <% if @monster.damage_immunities.length >0  %>
-          <dt class="fl b mr1">Damage Immunities</dt>
-            <dd class="ml0"><%= @monster.damage_immunities %></dd>
-        <% end %>
-         <% if @monster.condition_immunities.length >0  %>
-          <dt class="fl b mr1">Condition Immunities</dt>
-            <dd class="ml0"><%= @monster.condition_immunities %></dd>
-        <% end %>
         <dt class="fl b mr1">Challenge</dt>
         <dd class="ml0"><%= @monster.cr %></dd>
       </dl>
