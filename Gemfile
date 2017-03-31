@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails', '~> 4.2'
 gem 'listjs-rails', '~> 1.1'
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '~> 1.3'
+gem 'uglifier', '~> 2.7'
 gem 'tachyons-rails', '~> 4.6'
 gem 'turbolinks', '~> 5.0'
 
