@@ -2,17 +2,17 @@
   <%= render 'search_bar' %>
 <% end %>
 
+<article id="monster-list-empty" class="pt5 mt5" style="display: none;">
+  <%= render 'empty' %>
+</article>
+
 <article id="monster-list" class="pt5 mt5">
   <ul class="list ph2 pb2 mb0" style="margin-top:0.6rem;">
-    <% if @monsters.present? %>
-      <% @monsters.each do |monster| %>
-        <li class="db measure center" style="margin-top:-0.6rem;">
-          <%= link_to monster.name, monster_path(monster), class: 'monster-name db link black ph2 pv3 hover-bg-washed-yellow ba bw2 b--black bg-white br3 fw6 shadow-2' %>
-          </a>
-        </li>
-      <% end %>
-    <% else %>
-      <%= render 'empty' %>
+    <% @monsters.each do |monster| %>
+      <li class="db measure center" style="margin-top:-0.6rem;">
+        <%= link_to monster.name, monster_path(monster), class: 'monster-name db link black ph2 pv3 hover-bg-washed-yellow ba bw2 b--black bg-white br3 fw6 shadow-2' %>
+        </a>
+      </li>
     <% end %>
   </ul>
   <p class="measure center tc">

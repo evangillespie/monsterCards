@@ -8,7 +8,12 @@ var monsters = (function($, window, document) {
     var listObj = new List('monster-list', options);
     $('#search').on('keyup', function() {
       var searchString = $(this).val();
-      listObj.search(searchString);
+      results = listObj.search(searchString);
+      if (results.length == 0) {
+        $('#monster-list-empty').show();
+      } else {
+        $('#monster-list-empty').hide();
+      }
     });
   };
 
