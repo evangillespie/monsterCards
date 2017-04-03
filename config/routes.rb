@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root to: 'monsters#index'
-  resources :monsters, only: [:index, :show]
 
-  get "/pages/*page" => "pages#show"
+  get ":page", to: "pages#show"
+
+  resources :monster_sets, only: [:show], path: '' do
+    get '/license', to: 'monster_sets#show'
+    resources :monsters, only: [:index, :show], path: ''
+  end
+
 end

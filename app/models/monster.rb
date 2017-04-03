@@ -12,4 +12,8 @@ class Monster < ApplicationRecord
   def ability_mod(score)
     return ((score - 10) / 2).floor
   end
+
+  def to_param
+    self.name.downcase.gsub(' ', '-')
+  end
 end
