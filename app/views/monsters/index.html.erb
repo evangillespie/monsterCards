@@ -2,7 +2,7 @@
   <%= render 'search_bar' %>
 <% end %>
 
-<article id="monster-list-empty" class="pt5 mt5" style="display: none;">
+<article id="monster-list-empty" class="pt5 mt5 <%= @monsters.empty? ? '' : 'hidden' %>">
   <%= render 'empty' %>
 </article>
 
