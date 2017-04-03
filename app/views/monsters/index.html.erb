@@ -2,11 +2,8 @@
   <%= render 'search_bar' %>
 <% end %>
 
-<article id="monster-list-empty" class="pt5 mt5 <%= @monsters.empty? ? '' : 'hidden' %>">
-  <%= render 'empty' %>
-</article>
-
 <article id="monster-list" class="pt5 mt5">
+  <%= render 'empty', empty: @monsters.empty? %>
   <ul class="list ph2 pb2 mb0" style="margin-top:0.6rem;">
     <% @monsters.each do |monster| %>
       <li class="db measure center" style="margin-top:-0.6rem;">
