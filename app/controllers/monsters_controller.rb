@@ -15,7 +15,11 @@ class MonstersController < ApplicationController
     @monster = Monster.
       includes(:monster_abilities).
       find_by(name: params[:id].gsub('-', ' ').titleize)
-    @title = "#{@monster.name} - #{@monster_set.system}"
+    if @monster.nil?
+      render file: "public/404.html", status: :not_found
+    else
+      @title = "#{@monster.name} - #{@monster_set.system}"
+    end
   end
 
   private
