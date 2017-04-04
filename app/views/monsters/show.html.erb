@@ -102,9 +102,9 @@
     <% end %>
 
     <footer class="bt bw2 lh-copy">
-      <p><a href="#" class="black hover-bg-washed-yellow"><%= @monster.name %></a> 
+      <p><%= link_to @monster.name, monster_set_monster_path(@monster_set, @monster), class: 'black hover-bg-washed-yellow'%>
       from 
-      <a href="/" class="black hover-bg-washed-yellow">D&D 5E SRD</a></p>
+      <a href="/" class="black hover-bg-washed-yellow">D&amp;D 5E SRD</a></p>
     </footer>
   </div>
 </article>
