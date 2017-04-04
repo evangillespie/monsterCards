@@ -4,7 +4,7 @@ var monsters = (function($, window, document) {
   };
 
   var initMonsterSearch = function() {
-    var options = { valueNames: ['monster-name'] }
+    var options = { valueNames: ['monster-name'], page: 350 }
     var listObj = new List('monster-list', options);
     $('#search').on('keyup', function() {
       var searchString = $(this).val();
