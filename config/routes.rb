@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :monsters, only: [:index, :show], path: ''
   end
 
+  get '*unmatched_route', to: 'application#not_found'
+
 end
