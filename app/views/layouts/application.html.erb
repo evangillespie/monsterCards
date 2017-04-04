@@ -26,5 +26,6 @@
     </header>
 
     <%= yield %>
+    <%= render 'layouts/google_analytics' if ENV['HEROKU_APP_NAME'].present? && ENV['HEROKU_APP_NAME'] == 'monstercards-prod'%>
   </body>
 </html>
