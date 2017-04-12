@@ -5,6 +5,8 @@
 
     <section class="bt bw2">
       <dl class="lh-copy">
+        <dt class="fl b mr1">Challenge Rating</dt>
+        <dd class="ml0"><%= @monster.cr %></dd>
         <dt class="fl b mr1">Armor Class</dt>
         <dd class="ml0"><%= @monster.ac %></dd>
         <dt class="fl b mr1">Hit Points</dt> 
@@ -67,8 +69,6 @@
           <dt class="fl b mr1">Condition Immunities</dt>
           <dd class="ml0"><%= @monster.condition_immunities %></dd>
         <% end %>
-        <dt class="fl b mr1">Challenge</dt>
-        <dd class="ml0"><%= @monster.cr %></dd>
       </dl>
     </section>
 
