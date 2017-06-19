@@ -7,6 +7,8 @@
       <dl class="lh-copy">
         <dt class="fl b mr1">Challenge Rating</dt>
         <dd class="ml0"><%= @monster.cr %></dd>
+        <dt class="fl b mr1">XP</dt>
+        <dd class="ml0"><%= number_with_delimiter(@monster.xp, :delimiter => ',')%></dd>
         <dt class="fl b mr1">Armor Class</dt>
         <dd class="ml0"><%= @monster.ac %></dd>
         <dt class="fl b mr1">Hit Points</dt> 
