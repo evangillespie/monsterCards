@@ -14,7 +14,7 @@ class MonstersController < ApplicationController
   def show
     @monster = Monster.
       includes(:monster_abilities).
-      find_by(name: params[:id].gsub('-', ' ').titleize)
+      find_by(slug: params[:id])
     if @monster.nil?
       render file: "public/404.html", status: :not_found
     else

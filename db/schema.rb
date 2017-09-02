@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403064055) do
+ActiveRecord::Schema.define(version: 20170902174551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170403064055) do
     t.string  "damage_immunities"
     t.string  "condition_immunities"
     t.integer "monster_set_id"
+    t.string  "slug"
   end
 
 end
