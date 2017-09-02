@@ -14,6 +14,6 @@ class Monster < ApplicationRecord
   end
 
   def to_param
-    self.name.downcase.gsub(' ', '-')
+    self.slug
   end
 end
