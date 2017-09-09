@@ -16,7 +16,6 @@ gem 'listjs-rails', '~> 1.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '~> 2.7'
 gem 'tachyons-rails', '~> 4.6'
-gem 'turbolinks', '~> 5.0'
 
 group :development, :test do
   gem 'byebug', '~> 9.0', platform: :mri
