@@ -4,7 +4,7 @@ class MonstersController < ApplicationController
 
   def index
     @title = "Monsters - #{@monster_set.system}"
-    @monsters = Monster.all
+    @monsters = Monster.where(monster_set_id: @monster_set.id)
   end
 
   def show

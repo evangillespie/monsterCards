@@ -9,7 +9,7 @@
       <li class="db measure center relative" style="margin-top:-0.6rem;">
         <%= link_to monster.name, monster_set_monster_path(@monster_set, monster), class: 'monster-name db link black ph2 pv3 hover-bg-washed-yellow ba bw2 b--black bg-white br3 fw6 shadow-2' %>
         </a>
-        <a href="#" class="absolute pv3 ph3 top-0 right-0 dim" role="button"><img src="https://icon.now.sh/star_border/aaaaaa/24" width="24" height="24" aria-hidden="true"><span class="clip">Add <%= monster.name %> to Favourites</span></a>
+        <a href="#" data-monster-set="<%=@monster_set.slug%>" data-monster="<%=monster.slug%>" class="favourite absolute pv3 ph3 top-0 right-0 dim" role="button"><img src="https://icon.now.sh/star_border/aaaaaa/24" width="24" height="24" aria-hidden="true"><span class="clip">Add <%= monster.name %> to Favourites</span></a>
       </li>
     <% end %>
   </ul>
@@ -21,6 +21,7 @@
 <script>
   $(document).ready(function() {
     monsters.init();
+    favourites.init();
   });
 </script>
 
