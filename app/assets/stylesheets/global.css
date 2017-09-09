@@ -3,3 +3,68 @@ body {
 	background-color: #e8fdf5;
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2319a974' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
 }
+
+/* van11y modal */
+
+/* needed for old browsers */
+dialog {
+  display: block;
+  border: 0;
+}
+
+/* removes scroll when modal is opened */
+.no-scroll {
+  overflow: hidden;
+}
+
+.primary-menu-modal-overlay[data-background-click="disabled"] {
+  cursor: auto;
+}
+
+.primary-menu-modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: .8;
+  z-index: 666;
+  cursor: pointer;
+}
+
+.primary-menu-modal {
+  left: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 667;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  background: white; /* fallback CSS IE9 */
+  padding: 0;
+}
+.primary-menu-modal-close {
+  position: absolute;
+  top: .75em;
+  right: .75em;
+  background: transparent;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.primary-menu-modal  {
+  animation: fadewhite ease .1s 1 normal ;
+}
+
+@keyframes fadewhite {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1.;
+  }
+}

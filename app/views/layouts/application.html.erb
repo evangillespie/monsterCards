@@ -19,8 +19,23 @@
           </a>
         <% end %>
         <a class="link white dib" href="/"><h1 class="f5 normal ma0">Monster Cards</h1></a>
-        <a class="link white dib fl absolute top-0 right-0 ph2 pv3" href="/about">About</a>
+        <a class="link white dib fl absolute top-0 right-0 ph2 pv3 js-modal" href="" data-modal-prefix-class="primary-menu" data-modal-content-id="primary-navigation" data-modal-close-img="https://icon.now.sh/x/FF725C/24" id="label_modal_6">Menu</a>
       </nav>
+
+      <div id="primary-navigation" class="dn">
+        <div class="measure center pt4-ns pb3-ns ph4-ns pa3 pb1">
+          <h1 class="mt0 mb2 f3 lh-title pt2">D&D 5E SRC</h1>
+          <ul class="list pl0 f4 mt0">
+            <li class="lh-copy pv3 bb bw1 b--black-20"><a href="/" class="link light-red">Monsters</a></li>
+            <li class="lh-copy pv3 bb bw1 b--black-20"><a href="/d&d5esrd/license" class="link light-red">License</a></li>
+          </ul>
+          <h2 class="mt0 mb2 f3 lh-title pt2">Monster Cards</h2>
+          <ul class="list pl0 f4 mt0">
+            <li class="lh-copy pv3 bb bw1 b--black-20"><a href="/about" class="link light-red">About</a></li>
+            <li class="lh-copy pv3 bb bw1 b--black-20"><a href="/change_log" class="link light-red">Changelog</a></li>
+          </ul>
+        </div>
+      </div>
 
       <%= yield :search_bar %>
     </header>
