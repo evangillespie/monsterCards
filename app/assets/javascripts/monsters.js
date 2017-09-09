@@ -2,7 +2,7 @@ var monsters = (function($, window, document) {
   var init = function(settings) {
     config = {
       monsterList: new List('monster-list', {
-        valueNames: ['monster-name'],
+        valueNames: ['monster-name', 'monster-xp'],
         page: 350
       }),
     }
