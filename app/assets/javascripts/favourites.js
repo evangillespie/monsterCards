@@ -1,8 +1,8 @@
 var favourites = (function($, window, document) {
   var init = function(settings){
-    initFavouriteClickListner();
     initFavouriteLocalStorage();
     initFavouriteClasses();
+    initFavouriteClickListner();
   };
 
   var initFavouriteClickListner = function(){
@@ -18,14 +18,18 @@ var favourites = (function($, window, document) {
   };
 
   var initFavouriteClasses = function(){
+
     // @TODO: get the set dynamically
     var set = "d&d5esrd";
     favs = getFavourites(set);
+
+    // console.time("second");
+    var selector = '';
     for(i=0; i < favs.length; i++){
-      // @TODO: this is not ideal on the monster show page
-      var selector = $('a.favourite-toggle[data-monster="'+favs[i]+'"]')
-      selector.addClass('bg-gold');
+      selector += '[data-monster="'+favs[i]+'"],';
     }
+    $(selector.slice(0, -1)).addClass('bg-gold');
+    // console.timeEnd("second");
   };
 
   var addOrRemoveFavourite = function(thisObj, set, monster){
