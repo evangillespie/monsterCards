@@ -28,12 +28,12 @@ var favourites = (function($, window, document) {
     for(i=0; i < favs.length; i++){
       selector += '[data-monster="'+favs[i]+'"],';
     }
-    $(selector.slice(0, -1)).addClass('bg-gold');
+    $(selector.slice(0, -1)).addClass('faved');
     // console.timeEnd("second");
   };
 
   var addOrRemoveFavourite = function(thisObj, set, monster){
-    if (thisObj.hasClass('bg-gold')){
+    if (thisObj.hasClass('faved')){
       removeFavourite(thisObj, set, monster);
     } else {
       addFavourite(thisObj, set, monster);
@@ -46,7 +46,7 @@ var favourites = (function($, window, document) {
       favs.push(monster);
       setFavourites(set, favs);
 
-      thisObj.addClass('bg-gold');
+      thisObj.addClass('faved');
     };
   };
 
@@ -57,7 +57,7 @@ var favourites = (function($, window, document) {
       favs.splice(index, 1);
       setFavourites(set, favs);
       
-      thisObj.removeClass('bg-gold');
+      thisObj.removeClass('faved');
     };
   };
 
