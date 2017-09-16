@@ -1,7 +1,11 @@
 <article id="main-content" class="mh0-ns mh2 mb2 mt5">
   <div class="pt4-ns pb3-ns ph4-ns pa3 pb1 center measure ba bw2 b--black br3 bg-white shadow-2 relative">
 
-    <a href="javascript:" data-monster-set="<%= @monster_set.slug %>" data-monster="<%= @monster.slug %>" class="favourite-toggle absolute pa2 top-0 right-0 top-1-ns right-1-ns dim v-mid" role="button"><img src="https://icon.now.sh/star_border/aaaaaa/36" width="36" height="36" aria-hidden="true"><span class="clip">Add <%= @monster.name %> to Favourites</span></a>
+    <a href="javascript:" data-monster-set="<%= @monster_set.slug %>" data-monster="<%= @monster.slug %>" class="favourite-toggle absolute pa2 top-0 right-0 top-1-ns right-1-ns v-mid" role="button">
+      <img class="iconic" data-src="/icons/star-empty-sm.svg">
+      <img class="iconic dn" data-src="/icons/star-sm.svg">
+      <span class="clip">Add <%= @monster.name %> to Favourites</span>
+    </a>
 
     <h2 class="mv0 f2-ns f3 lh-title"><%= @monster.name %></h2>
     <p class="i mt0 lh-copy "><%= "#{@monster.size} #{@monster.monster_type}" %><%= " (#{@monster.subtype})" if @monster.subtype?%><%=", #{@monster.alignment}" %></p>
