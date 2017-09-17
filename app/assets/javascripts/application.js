@@ -4,6 +4,5 @@
 
 // agnostic
 //= require list
-//= require turbolinks
 
 //= require_tree .
