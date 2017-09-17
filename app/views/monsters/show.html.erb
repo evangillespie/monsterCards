@@ -136,6 +136,6 @@
 
 <script>
   $(document).ready(function() {
-    favourites.init();
+    favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
   });
 </script>

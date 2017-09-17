@@ -1,7 +1,7 @@
 var favourites = (function($, window, document) {
   var init = function(settings){
     initFavouriteLocalStorage();
-    initFavouriteClasses();
+    initFavouriteClasses(settings.set);
     initFavouriteClickListner();
   };
 
@@ -17,19 +17,9 @@ var favourites = (function($, window, document) {
     }
   };
 
-  var initFavouriteClasses = function(){
-
-    // @TODO: get the set dynamically
-    var set = "d&d5esrd";
+  var initFavouriteClasses = function(set){
     favs = getFavourites(set);
-
-    // console.time("second");
-    var selector = '';
-    for(i=0; i < favs.length; i++){
-      selector += '[data-monster="'+favs[i]+'"],';
-    }
-    $(selector.slice(0, -1)).addClass('faved');
-    // console.timeEnd("second");
+    $("[data-monster='" + favs.join("'],[data-monster='") + "']").addClass('faved');
   };
 
   var addOrRemoveFavourite = function(thisObj, set, monster){

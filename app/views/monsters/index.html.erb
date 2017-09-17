@@ -24,7 +24,7 @@
 <script>
   $(document).ready(function() {
     monsters.init();
-    favourites.init();
+    favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
   });
 </script>
 
