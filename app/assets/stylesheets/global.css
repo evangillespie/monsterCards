@@ -13,6 +13,11 @@ body {
 .favourite-toggle.faved .iconic-star {display:inline-block;}
 .favourite-toggle.faved .iconic-star-empty {display:none;}
 
+/* navigation icons */
+
+header .iconic-chevron-left .iconic-property-stroke {fill: white; stroke: white;}
+header .iconic-chevron-left {height: 12px !important; width: 12px !important;}
+
 /* van11y modal */
 
 /* needed for old browsers */
