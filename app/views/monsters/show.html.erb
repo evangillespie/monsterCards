@@ -2,8 +2,9 @@
   <div class="pt4-ns pb3-ns ph4-ns pa3 pb1 center measure ba bw2 b--black br3 bg-white shadow-2 relative">
 
     <a href="javascript:" data-monster-set="<%= @monster_set.slug %>" data-monster="<%= @monster.slug %>" class="favourite-toggle absolute pa2 top-0 right-0 top-1-ns right-1-ns v-mid" role="button">
-      <img class="iconic" data-src="/icons/star-empty-sm.svg">
-      <img class="iconic dn" data-src="/icons/star-sm.svg">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 13 14" class="icon-favourite">
+        <path d="M13 5.055q0 0.172-0.203 0.375l-2.836 2.766 0.672 3.906q0.008 0.055 0.008 0.156 0 0.164-0.082 0.277t-0.238 0.113q-0.148 0-0.312-0.094l-3.508-1.844-3.508 1.844q-0.172 0.094-0.312 0.094-0.164 0-0.246-0.113t-0.082-0.277q0-0.047 0.016-0.156l0.672-3.906-2.844-2.766q-0.195-0.211-0.195-0.375 0-0.289 0.438-0.359l3.922-0.57 1.758-3.555q0.148-0.32 0.383-0.32t0.383 0.32l1.758 3.555 3.922 0.57q0.438 0.070 0.438 0.359z"></path>
+      </svg>      
       <span class="clip">Add <%= @monster.name %> to Favourites</span>
     </a>
 
