@@ -1,6 +1,6 @@
 var favourites = (function($, window, document) {
   var init = function(settings){
-    initFavouriteLocalStorage();
+    initFavouriteLocalStorage(settings.set);
     initFavouriteClasses(settings.set);
     initFavouriteClickListner();
   };
@@ -11,9 +11,14 @@ var favourites = (function($, window, document) {
     });
   };
 
-  var initFavouriteLocalStorage = function(){
+  var initFavouriteLocalStorage = function(set_name){
     if (localStorage.hasOwnProperty('favourites') == false){
       localStorage.setItem('favourites', JSON.stringify({}));
+    }
+    var favs = JSON.parse(localStorage.getItem('favourites'));
+    if (!(set_name in favs)){
+      favs[set_name] = [];
+      localStorage.setItem('favourites', JSON.stringify(favs));
     }
   };
 
@@ -53,11 +58,7 @@ var favourites = (function($, window, document) {
 
   var getFavourites = function(set){
     // get the array of favourites for a particular set
-    favs = JSON.parse(localStorage.getItem('favourites'));
-    if (!(set in favs)){
-      favs[set] = [];
-    }
-    return favs[set];
+    return JSON.parse(localStorage.getItem('favourites'))[set];
   }
 
   var setFavourites = function(set, favoritesArray){
