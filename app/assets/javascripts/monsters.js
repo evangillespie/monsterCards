@@ -18,13 +18,24 @@ var monsters = (function($, window, document) {
 
   var initMonsterSearch = function() {
     $('#search').on('keyup', function() {
+      config.monsterList.search();
+      config.monsterList.filter();
       var searchString = $(this).val();
       monsterFilter(searchString);
     });
   };
 
   var monsterFilter = function(searchString) {
-    var results = config.monsterList.search(searchString);
+    if (searchString.includes('-')) {
+
+      var xpMinMax = searchString.split(' - ');
+      var results = config.monsterList.filter(function(monster) {
+        return (parseInt(monster.values()['monster-xp']) >= xpMinMax[0] && parseInt(monster.values()['monster-xp']) <= xpMinMax[1]);
+      });
+    } else {
+      var results = config.monsterList.search(searchString);
+    }
+
     if (results.length == 0) {
       $('#monster-list-empty').show();
     } else {
