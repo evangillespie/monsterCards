@@ -1,0 +1,14 @@
+<article id="monster-list" class="pt5 mt5">
+</article>
+
+<script type="text/javascript">
+  $.ajax({
+    url: "/favourites/fetch",
+    data: localStorage.favourites["<%= @monster_set.slug %>"],
+    success: function (data, response) {
+      $('article#monster-list').append(data)
+      favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
+    }, 
+  });
+
+</script>

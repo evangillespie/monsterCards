@@ -4,11 +4,7 @@
 
 <article id="monster-list" class="pt5 mt5">
   <%= render 'empty', empty: @monsters.empty? %>
-  <ul class="list ph2 pb2 mb0" style="margin-top:0.6rem;">
-    <% @monsters.each do |monster| %>
-      <%= render 'monster', monster: monster %>
-    <% end %>
-  </ul>
+  <%= render 'shared/monsters', monsters: @monsters %>
   <p class="measure center tc">
     <a href="/d&d5esrd/license" class="black hover-bg-washed-yellow">License</a>
   </p>

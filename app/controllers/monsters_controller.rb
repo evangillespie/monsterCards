@@ -1,7 +1,5 @@
 class MonstersController < ApplicationController
 
-  before_action :set_monster_set
-
   def index
     @title = "Monsters - #{@monster_set.system}"
     @monsters = Monster.where(monster_set_id: @monster_set.id)
@@ -19,8 +17,4 @@ class MonstersController < ApplicationController
   end
 
   private
-  
-  def set_monster_set
-    @monster_set = MonsterSet.first
-  end
 end
