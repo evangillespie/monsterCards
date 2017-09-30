@@ -310,78 +310,7 @@ namespace :importer do
   # :return: (int) XP for a monster with the given CR
   #
   def get_xp_from_cr(cr)
-    xp = -1
-    case cr
-      when "0"
-        xp = 10
-      when "1/8"
-        xp = 25
-      when "1/4"
-        xp = 50
-      when "1/2"
-        xp = 100
-      when "1"
-        xp =200
-      when "2"
-        xp =450
-      when "3"
-        xp =700
-      when "4"
-        xp =1100
-      when "5"
-        xp =1800
-      when "6"
-        xp =2300
-      when "7"
-        xp =2900
-      when "8"
-        xp =3900
-      when "9"
-        xp =5000
-      when "10"
-        xp = 5900
-      when "11"
-        xp = 7200
-      when "12"
-        xp = 8400
-      when "13"
-        xp = 10000
-      when "14"
-        xp = 11500
-      when "15"
-        xp = 13000
-      when "16"
-        xp = 15000
-      when "17"
-        xp = 18000
-      when "18"
-        xp = 20000
-      when "19"
-        xp = 22000
-      when "20"
-        xp = 25000
-      when "21"
-        xp = 33000
-      when "22"
-        xp = 41000
-      when "23"
-        xp = 50000
-      when "24"
-        xp = 62000
-      when "25"
-        xp = 75000
-      when "26"
-        xp = 90000
-      when "27"
-        xp = 105000
-      when "28"
-        xp = 120000
-      when "29"
-        xp = 135000
-      when "30"
-        xp = 155000
-    end
-    return xp
+    Monster::CR_XP[cr]
   end
 
 end #namespace
