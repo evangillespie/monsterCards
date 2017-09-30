@@ -1,4 +1,9 @@
+<%= content_for :search_bar do  %>
+  <%= render 'shared/search_bar' %>
+<% end %>
+
 <article id="monster-list" class="pt5 mt5">
+  <%= render 'monsters/empty', empty: @monsters.nil? %>
 </article>
 
 <script type="text/javascript">
@@ -9,9 +14,9 @@
       data: {favourite_monsters: JSON.parse(localStorage.favourites)["<%= @monster_set.slug.html_safe %>"]},
       success: function (data, response) {
         $('article#monster-list').append(data)
+        monsters.init();
         favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
       },
     });
   }
-
 </script>
