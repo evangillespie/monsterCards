@@ -4,7 +4,7 @@
 <script type="text/javascript">
   $.ajax({
     url: "/favourites/fetch",
-    data: localStorage.favourites["<%= @monster_set.slug %>"],
+    data: {favourite_monsters: JSON.parse(localStorage.favourites)["<%= @monster_set.slug.html_safe %>"]},
     success: function (data, response) {
       $('article#monster-list').append(data)
       favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
