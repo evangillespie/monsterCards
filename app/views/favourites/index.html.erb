@@ -8,7 +8,8 @@
 
 <script type="text/javascript">
   if(localStorage.hasOwnProperty('favourites') == true &&
-    "<%= @monster_set.slug.html_safe %>" in JSON.parse(localStorage.getItem('favourites'))){
+    "<%= @monster_set.slug.html_safe %>" in JSON.parse(localStorage.getItem('favourites')) &&
+    JSON.parse(localStorage.getItem('favourites'))["<%= @monster_set.slug.html_safe %>"].length > 0){
     $.ajax({
       url: "/favourites/fetch",
       data: {favourite_monsters: JSON.parse(localStorage.favourites)["<%= @monster_set.slug.html_safe %>"]},
@@ -18,5 +19,7 @@
         favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
       },
     });
+  } else {
+  // render the partial in _empty_state
   }
 </script>
