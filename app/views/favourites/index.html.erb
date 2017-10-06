@@ -7,20 +7,17 @@
 </article>
 
 <script type="text/javascript">
-  if(localStorage.hasOwnProperty('favourites') == true &&
+  if (localStorage.hasOwnProperty('favourites') == true &&
     "<%= @monster_set.slug.html_safe %>" in JSON.parse(localStorage.getItem('favourites')) &&
     JSON.parse(localStorage.getItem('favourites'))["<%= @monster_set.slug.html_safe %>"].length > 0){
-    $('#favourites-empty-state').hide();
     $.ajax({
       url: "/favourites/fetch",
       data: {favourite_monsters: JSON.parse(localStorage.favourites)["<%= @monster_set.slug.html_safe %>"]},
       success: function (data, response) {
-        $('article#monster-list').append(data)
+        $('article#monster-list').html(data);
         monsters.init();
         favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
       },
     });
-  } else {
-  // render the partial in _empty_state
-  }
+  };
 </script>
