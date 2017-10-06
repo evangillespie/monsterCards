@@ -4,9 +4,14 @@ class FavouritesController < ApplicationController
   end
 
   def fetch
-    render 'shared/_monsters',
-      :layout => false,
-      :locals => {:monsters => Monster.where(slug: params['favourite_monsters'])}
+    @monsters = Monster.where(slug: params['favourite_monsters'])
+    if @monsters.present?
+      render 'shared/_monsters',
+        :layout => false,
+        :locals => {:monsters => @monsters}
+    else
+      render '_empty_state', layout: false
+    end
   end
 
 end
