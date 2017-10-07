@@ -29,5 +29,5 @@ group :development do
   gem 'pry-rails', '~> 0.3'
   gem 'spring', '~> 2.0'
   gem 'spring-watcher-listen', '~> 2.0'
+  gem 'rails_real_favicon'
 end
-
