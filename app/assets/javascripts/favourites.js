@@ -42,6 +42,14 @@ var favourites = (function($, window, document) {
       setFavourites(set, favs);
 
       thisObj.addClass('faved');
+      if (typeof(ga) == 'function') {
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Favourites',
+          eventAction: 'add',
+          eventLabel: monster
+        });
+      }
     };
   };
 
@@ -53,6 +61,14 @@ var favourites = (function($, window, document) {
       setFavourites(set, favs);
       
       thisObj.removeClass('faved');
+      if (typeof(ga) == 'function') {
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Favourites',
+          eventAction: 'remove',
+          eventLabel: monster
+        });
+      }
     };
   };
 
