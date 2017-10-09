@@ -1,19 +1,10 @@
 <%= content_for :search_bar do  %>
-  <%= render 'search_bar' %>
+  <%= render 'shared/search_bar' %>
 <% end %>
 
 <article id="monster-list" class="pt5 mt5">
   <%= render 'empty', empty: @monsters.empty? %>
-  <ul class="list ph2 pb2 mb0" style="margin-top:0.6rem;">
-    <% @monsters.each do |monster| %>
-      <li class="db measure center" style="margin-top:-0.6rem;">
-        <%= link_to monster.name, monster_set_monster_path(@monster_set, monster), class: 'monster-name db link black ph2 pv3 hover-bg-washed-yellow ba bw2 b--black bg-white br3 fw6 shadow-2', data: {name: monster.name, xp: monster.xp} %>
-        <span class='hidden monster-xp'>
-          <%= monster.xp %>
-        </span>
-      </li>
-    <% end %>
-  </ul>
+  <%= render 'shared/monsters', monsters: @monsters %>
   <p class="measure center tc">
     <a href="/d&d5esrd/license" class="black hover-bg-washed-yellow">License</a>
   </p>
@@ -22,6 +13,7 @@
 <script>
   $(document).ready(function() {
     monsters.init();
+    favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
   });
 </script>
 

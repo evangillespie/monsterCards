@@ -7,3 +7,81 @@ body {
 .hidden {
   display: none
 }
+
+/* favourite icon */
+.favourite-toggle.faved .icon-favourite {fill: #FFB700; stroke: none;}
+.favourite-toggle.faved:hover .icon-favourite {fill: #FFB700; stroke: none;}
+
+.favourite-toggle .icon-favourite {fill: none; stroke: #777;}
+.favourite-toggle:hover .icon-favourite {fill:none;  stroke: #FFB700;}
+
+/* navigation icons */
+header .icon-chevron-left {fill: white;}
+
+/* van11y modal */
+
+/* needed for old browsers */
+dialog {
+  display: block;
+  border: 0;
+}
+
+/* removes scroll when modal is opened */
+.no-scroll {
+  overflow: hidden;
+}
+
+.primary-menu-modal-overlay[data-background-click="disabled"] {
+  cursor: auto;
+}
+
+.primary-menu-modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: .8;
+  z-index: 666;
+  cursor: pointer;
+}
+
+.primary-menu-modal {
+  left: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 667;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  background: white; /* fallback CSS IE9 */
+  padding: 0;
+}
+.primary-menu-modal-close {
+  position: absolute;
+  top: .75em;
+  right: .75em;
+  background: transparent;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.primary-menu-modal  {
+  animation: fadewhite ease 0.2s 1 normal ;
+}
+
+@keyframes fadewhite {
+  0% {
+    position: absolute;
+    top: -100%;
+    opacity: 0.2;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
