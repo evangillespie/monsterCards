@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'monsters#index'
 
+  get "favourites", to: "favourites#index"
+  get "favourites/fetch", to: "favourites#fetch"
+
   get ":page", to: "pages#show"
 
   resources :monster_sets, only: [:show], path: '' do

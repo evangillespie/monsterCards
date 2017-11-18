@@ -273,7 +273,7 @@ namespace :importer do
       m.xp = get_xp_from_cr(monster['challenge_rating'])
       m.saving_throws = saves
       m.skills = skills
-      m.slug = m.name.downcase.gsub(' ', '-')
+      m.slug = m.name.downcase.gsub(' ', '-').gsub("'", '')
       m.save!
 
       # create all the monster abilities      

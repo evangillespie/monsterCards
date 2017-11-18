@@ -3,6 +3,7 @@
   <head>
     <title><%= @title || "Monster Cards" %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= render 'application/favicon' %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,21 +12,12 @@
   <body class="bg-washed-green avenir">
   <a href="#main-content" class="clip">Skip to Main Content</a>
 
-    <header class="fixed bg-black top-0 left-0 w-100 shadow-2">
-      <nav class="tc pv3 ph2 measure center relative">
-        <% if params[:controller] == "monsters" && params[:action] == "show" %>
-          <a class="link white dib fl absolute top-0 left-0 ph2 pv3" href="/" />
-            <img src='https://icon.now.sh/chevronLeft/ffffff/12' class="white" width="12" height="12" aria-hidden="true" /> Back
-          </a>
-        <% end %>
-        <a class="link white dib" href="/"><h1 class="f5 normal ma0">Monster Cards</h1></a>
-        <a class="link white dib fl absolute top-0 right-0 ph2 pv3" href="/about">About</a>
-      </nav>
-
-      <%= yield :search_bar %>
-    </header>
+    <%= render 'shared/navigation' %>
 
     <%= yield %>
     <%= render 'layouts/google_analytics' if ENV['HEROKU_APP_NAME'].present? && ENV['HEROKU_APP_NAME'] == 'monstercards-prod'%>
+
+    <%= render 'shared/navigation_modal' %>
+
   </body>
 </html>
