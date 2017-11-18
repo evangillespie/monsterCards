@@ -7,6 +7,7 @@ body {
 .hidden {
   display: none
 }
+
 /* favourite icon */
 .favourite-toggle.faved .icon-favourite {fill: #FFB700; stroke: none;}
 .favourite-toggle.faved:hover .icon-favourite {fill: #FFB700; stroke: none;}
