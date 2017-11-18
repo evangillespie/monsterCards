@@ -14,7 +14,7 @@
       data: {favourite_monsters: JSON.parse(localStorage.favourites)["<%= @monster_set.slug.html_safe %>"]},
       success: function (data, response) {
         $('article#monster-list').append(data);
-        monsters.init();
+        filters.init();
         favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
       },
     });

@@ -9,7 +9,7 @@ var filters = (function($, window, document) {
 
     initFilter();
     initMonsterSearch();
-    initMonsterSort();
+    //initMonsterSort();
   };
 
   var initFilter = function() {
