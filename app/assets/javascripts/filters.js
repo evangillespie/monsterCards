@@ -1,4 +1,4 @@
-var monsters = (function($, window, document) {
+var filters = (function($, window, document) {
   var init = function(settings) {
     config = {
       monsterList: new List('monster-list', {
@@ -9,6 +9,7 @@ var monsters = (function($, window, document) {
 
     initFilter();
     initMonsterSearch();
+    initMonsterSort();
   };
 
   var initFilter = function() {
@@ -24,6 +25,10 @@ var monsters = (function($, window, document) {
       monsterFilter(searchString);
     });
   };
+
+  var initMonsterSort = function() {
+    config.monsterList.sort('monster-xp', { order: 'asc' });
+  }
 
   var monsterFilter = function(searchString) {
     if (searchString.includes('-')) {
