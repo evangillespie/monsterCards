@@ -9,7 +9,7 @@ var filters = (function($, window, document) {
 
     initFilter();
     initMonsterSearch();
-    initMonsterSort();
+    //initMonsterSort();
   };
 
   var initFilter = function() {
@@ -53,7 +53,18 @@ var filters = (function($, window, document) {
   };
 
   var initMonsterSort = function() {
-    config.monsterList.sort('monster-xp', { order: 'asc' });
+    config.monsterList.sort('', {
+      order: 'asc',
+      sortFunction: function(monsterI, monsterJ) {
+        if (parseInt(monsterJ.values()['monster-xp']) < parseInt(monsterI.values()['monster-xp'])) {
+          return 1;
+        } else if (parseInt(monsterJ.values()['monster-xp']) > parseInt(monsterI.values()['monster-xp'])) {
+          return -1;
+        } else {
+          return monsterI.values()['monster-name'].localeCompare(monsterJ.values()['monster-name']);
+        }
+      },
+    });
   }
 
   var updateCrFilterSliderLabels = function(values, handle, unencoded, tap, positions){
