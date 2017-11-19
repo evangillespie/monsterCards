@@ -11,6 +11,20 @@ body {
 .favourite-toggle .icon-favourite {fill: none; stroke: #777;}
 .favourite-toggle:hover .icon-favourite {fill:none;  stroke: #FFB700;}
 
+/* favourite icon animation */
+@keyframes faveIn { 
+  0% { opacity:0; transform: scale(1.4); }
+  50% { opacity:50%; transform: scale(0.9); }
+  100% { opacity:1; transform: scale(1); } 
+}
+
+.faved {
+    opacity: 0;  /* make things invisible upon start */
+    animation: faveIn ease-out 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    animation-fill-mode: forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    animation-duration: .3s;
+}
+
 /* navigation icons */
 header .icon-chevron-left {fill: white;}
 
