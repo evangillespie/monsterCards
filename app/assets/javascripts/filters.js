@@ -68,8 +68,7 @@ var filters = (function($, window, document) {
   }
 
   var updateCrFilterSliderLabels = function(values, handle, unencoded, tap, positions){
-    var h = $('div[data-handle="'+handle+'"]');
-    h.html(values[handle]);
+    $('div[data-handle="'+handle+'"]').html(values[handle]);
   }
 
   var monsterFilter = function(searchString) {
