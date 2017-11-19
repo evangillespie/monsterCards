@@ -99,3 +99,51 @@ dialog {
     opacity: 1;
   }
 }
+
+/* no ui slider */
+
+/* no overlapping handles */
+
+.noUi-horizontal {
+  padding-right: 32px;
+}
+
+.noUi-horizontal .noUi-handle {
+  left: -3px;
+}
+.noUi-horizontal .noUi-handle-upper {
+  left: 0;
+}
+.noUi-horizontal .noUi-origin  {
+  right: -32px;
+}
+
+/* base styling */
+
+.noUi-target {
+  height: 10px;
+  border: 2px solid black;
+  background: white;
+  border-radius: 0;
+}
+
+.noUi-connect {
+  background: #19A974;
+  border: none;
+  border-radius: 0;
+}
+
+/* handle styling */
+
+.noUi-horizontal .noUi-handle {
+  height: auto;
+  top: -14px;
+  padding: 4px 0;
+  border: 4px solid black;
+  text-align: center;
+  font-weight: 600;
+}
+
+.noUi-handle:after, .noUi-handle:before {
+  content: none;
+}

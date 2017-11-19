@@ -2,6 +2,10 @@
   <%= render 'shared/search_bar' %>
 <% end %>
 
+<%= content_for :filter_menu do  %>
+  <%= render 'shared/filter_menu' %>
+<% end %>
+
 <article id="monster-list" class="pt5 mt5">
   <%= render 'monsters/empty', empty: false %>
 </article>
