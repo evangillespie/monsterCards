@@ -17,7 +17,9 @@
 <script>
   $(document).ready(function() {
     favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
-    filters.init();
+    filters.init({
+      crXp: <%= Monster::CR_XP.to_json.html_safe %>,
+    });
   });
 </script>
 

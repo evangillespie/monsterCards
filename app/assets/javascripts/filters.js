@@ -1,6 +1,7 @@
 var filters = (function($, window, document) {
   var init = function(settings) {
     config = {
+      crXp: settings.crXp,
       monsterList: new List('monster-list', {
         valueNames: ['monster-name', 'monster-xp'],
         page: 350
@@ -69,18 +70,11 @@ var filters = (function($, window, document) {
 
   var updateCrFilterSliderLabels = function(values, handle, unencoded, tap, positions){
     $('div[data-handle="'+handle+'"]').html(values[handle]);
+    monsterFilterByCr(values);
   }
 
   var monsterFilter = function(searchString) {
-    if (searchString.includes('-')) {
-
-      var xpMinMax = searchString.split(' - ');
-      var results = config.monsterList.filter(function(monster) {
-        return (parseInt(monster.values()['monster-xp']) >= xpMinMax[0] && parseInt(monster.values()['monster-xp']) <= xpMinMax[1]);
-      });
-    } else {
-      var results = config.monsterList.search(searchString);
-    }
+    var results = config.monsterList.search(searchString);
 
     if (results.length == 0) {
       $('#monster-list-empty').show();
@@ -88,6 +82,19 @@ var filters = (function($, window, document) {
       $('#monster-list-empty').hide();
     }
   };
+
+  var monsterFilterByCr = function(values) {
+    var xpMinMax = values.map(function(value) { return config.crXp[value] });
+    var results = config.monsterList.filter(function(monster) {
+      return (parseInt(monster.values()['monster-xp']) >= xpMinMax[0] && parseInt(monster.values()['monster-xp']) <= xpMinMax[1]);
+    });
+
+    if (results.length == 0) {
+      $('#monster-list-empty').show();
+    } else {
+      $('#monster-list-empty').hide();
+    }
+  }
 
   return {
     init: init,
