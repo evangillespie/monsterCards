@@ -69,7 +69,11 @@ var filters = (function($, window, document) {
   }
 
   var updateCrFilterSliderLabels = function(values, handle, unencoded, tap, positions){
-    $('div[data-handle="'+handle+'"]').html(values[handle]);
+    if (values[handle] == 15)
+      var val = "15+";
+    else
+      var val = values[handle];
+    $('div[data-handle="'+handle+'"]').html(val);
     monsterFilterByCr(values);
   }
 
