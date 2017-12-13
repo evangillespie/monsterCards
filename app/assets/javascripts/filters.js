@@ -70,7 +70,7 @@ var filters = (function($, window, document) {
 
   var updateCrFilterSliderLabels = function(values, handle, unencoded, tap, positions){
     if (values[handle] == 15)
-      var val = "15+";
+      var val = "15<small class='tracked-tight f7'>+</small>";
     else
       var val = values[handle];
     $('div[data-handle="'+handle+'"]').html(val);

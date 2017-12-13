@@ -142,8 +142,13 @@ dialog {
   border: 4px solid black;
   text-align: center;
   font-weight: 600;
+  letter-spacing: -1px;
 }
 
 .noUi-handle:after, .noUi-handle:before {
   content: none;
+}
+
+.noUi-horizontal .noUi-handle small {
+  font-size: 0.5rem;
 }
