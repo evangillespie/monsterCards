@@ -14,6 +14,5 @@
   </nav>
 
   <%= yield :search_bar %>
-  <%= yield :filter_menu %>
-
+  <%= yield :filter_menu if (params[:controller] == "monsters" && params[:action] == "index") %>
 </header>
