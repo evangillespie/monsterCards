@@ -54,7 +54,7 @@ var filters = (function($, window, document) {
 
   var updateCrFilterSliderLabels = function(values, handle, unencoded, tap, positions){
     if (values[handle] == 15)
-      var val = "15+";
+      var val = "15<small class='tracked-tight f7'>+</small>";
     else
       var val = values[handle];
     $('div[data-handle="'+handle+'"]').html(val);
@@ -73,8 +73,15 @@ var filters = (function($, window, document) {
 
   var monsterFilterByCr = function(values) {
     var xpMinMax = values.map(function(value) { return config.crXp[value] });
+    var xpMin = xpMinMax[0];
+    var xpMax = xpMinMax[1];
+
+    // To account for the 15+ max on the slider
+    if (xpMax == 13000) {
+      xpMax = 155000;
+    }
     var results = config.monsterList.filter(function(monster) {
-      return (parseInt(monster.values()['monster-xp']) >= xpMinMax[0] && parseInt(monster.values()['monster-xp']) <= xpMinMax[1]);
+      return (parseInt(monster.values()['monster-xp']) >= xpMin && parseInt(monster.values()['monster-xp']) <= xpMax);
     });
 
     if (results.length == 0) {

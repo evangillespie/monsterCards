@@ -1,4 +1,8 @@
-<ul class="list ph2 pb2 mb0" style="margin-top: 3rem;">
+<% if (params[:controller] == "monsters" && params[:action] == "index") %>
+  <ul class="list ph2 pb2 mb0" style="margin-top: 3rem;">
+<% else %>
+  <ul class="list ph2 pb2 mb0" style="margin-top: 0.5rem;"">
+<% end %>
   <% monsters.each do |monster| %>
     <%= render 'shared/monster', monster: monster %>
   <% end %>
