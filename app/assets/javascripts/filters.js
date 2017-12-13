@@ -1,6 +1,7 @@
 var filters = (function($, window, document) {
   var init = function(settings) {
     config = {
+      showFilter: settings.showFilter,
       crXp: settings.crXp,
       monsterList: new List('monster-list', {
         valueNames: ['monster-name', 'monster-xp'],
@@ -16,7 +17,9 @@ var filters = (function($, window, document) {
   var initFilter = function() {
     var searchString = $('#search').val();
     monsterFilter(searchString);
-    initSliders();
+    if (config.showFilters) {
+      initSliders();
+    }
   };
 
   var initSliders = function() {

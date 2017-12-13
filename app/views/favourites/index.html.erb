@@ -19,6 +19,7 @@
       success: function (data, response) {
         $('article#monster-list').append(data);
         filters.init({
+          showFilter: false,
           crXp: <%= Monster::CR_XP.to_json.html_safe %>,
         });
         favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
