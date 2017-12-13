@@ -88,9 +88,12 @@ var filters = (function($, window, document) {
   };
 
   var monsterFilterByCr = function(values) {
-    var [xpMin, xpMax] = values.map(function(value) { return config.crXp[value] });
+    var xpMinMax = values.map(function(value) { return config.crXp[value] });
+    var xpMin = xpMinMax[0];
+    var xpMax = xpMinMax[1];
+
+    // To account for the 15+ max on the slider
     if (xpMax == 13000) {
-      // To account for the 15+ max on the slider
       xpMax = 155000;
     }
     var results = config.monsterList.filter(function(monster) {
