@@ -18,7 +18,7 @@
   $(document).ready(function() {
     favourites.init({set:"<%=@monster_set.slug.html_safe%>"});
     filters.init({
-      showFilter: true,
+      showSlider: true,
       crXp: <%= Monster::CR_XP.to_json.html_safe %>,
     });
   });
