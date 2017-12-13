@@ -88,9 +88,13 @@ var filters = (function($, window, document) {
   };
 
   var monsterFilterByCr = function(values) {
-    var xpMinMax = values.map(function(value) { return config.crXp[value] });
+    var [xpMin, xpMax] = values.map(function(value) { return config.crXp[value] });
+    if (xpMax == 13000) {
+      // To account for the 15+ max on the slider
+      xpMax = 155000;
+    }
     var results = config.monsterList.filter(function(monster) {
-      return (parseInt(monster.values()['monster-xp']) >= xpMinMax[0] && parseInt(monster.values()['monster-xp']) <= xpMinMax[1]);
+      return (parseInt(monster.values()['monster-xp']) >= xpMin && parseInt(monster.values()['monster-xp']) <= xpMax);
     });
 
     if (results.length == 0) {
