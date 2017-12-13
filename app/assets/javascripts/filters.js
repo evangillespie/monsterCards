@@ -11,7 +11,6 @@ var filters = (function($, window, document) {
 
     initFilter();
     initMonsterSearch();
-    //initMonsterSort();
   };
 
   var initFilter = function() {
@@ -55,21 +54,6 @@ var filters = (function($, window, document) {
       monsterFilter(searchString);
     });
   };
-
-  var initMonsterSort = function() {
-    config.monsterList.sort('', {
-      order: 'asc',
-      sortFunction: function(monsterI, monsterJ) {
-        if (parseInt(monsterJ.values()['monster-xp']) < parseInt(monsterI.values()['monster-xp'])) {
-          return 1;
-        } else if (parseInt(monsterJ.values()['monster-xp']) > parseInt(monsterI.values()['monster-xp'])) {
-          return -1;
-        } else {
-          return monsterI.values()['monster-name'].localeCompare(monsterJ.values()['monster-name']);
-        }
-      },
-    });
-  }
 
   var updateCrFilterSliderLabels = function(values, handle, unencoded, tap, positions){
     if (values[handle] == 15)
