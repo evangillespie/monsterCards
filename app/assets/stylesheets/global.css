@@ -105,17 +105,8 @@ dialog {
 /* no overlapping handles */
 
 .noUi-horizontal {
-  padding-right: 32px;
-}
-
-.noUi-horizontal .noUi-handle {
-  left: -3px;
-}
-.noUi-horizontal .noUi-handle-upper {
-  left: 0;
-}
-.noUi-horizontal .noUi-origin  {
-  right: -32px;
+  padding-right: 13px;
+  padding-left: 13px;
 }
 
 /* base styling */
