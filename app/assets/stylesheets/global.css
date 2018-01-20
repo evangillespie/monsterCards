@@ -8,6 +8,11 @@ body {
   display: none
 }
 
+/* override tachyons style */
+abbr[title] {
+  text-decoration: none !important;
+}
+
 /* favourite icon */
 .favourite-toggle.faved .icon-favourite {fill: #FFB700; stroke: none;}
 .favourite-toggle.faved:hover .icon-favourite {fill: #FFB700; stroke: none;}
