@@ -44,6 +44,7 @@ var filters = (function($, window, document) {
     });
     // bind slider update events to the right function
     crFilterSlider.noUiSlider.on('update', updateCrFilterSliderLabels);
+    crFilterSlider.noUiSlider.on('set', monsterFilterByCr);
   }
 
   var initMonsterSearch = function() {
@@ -61,7 +62,6 @@ var filters = (function($, window, document) {
     else
       var val = values[handle];
     $('div[data-handle="'+handle+'"]').html(val);
-    monsterFilterByCr(values);
   }
 
   var monsterFilter = function(searchString) {
@@ -74,7 +74,7 @@ var filters = (function($, window, document) {
     }
   };
 
-  var monsterFilterByCr = function(values) {
+  var monsterFilterByCr = function(values, handle, unencoded, tap, positions) {
     var xpMinMax = values.map(function(value) { return config.crXp[value] });
     var xpMin = xpMinMax[0];
     var xpMax = xpMinMax[1];
