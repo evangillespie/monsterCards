@@ -5,3 +5,5 @@
 # Printers
 
 * https://shuffledink.com/
+* http://expertplayingcard.com/#custom
+* http://www.palaimoncards.com/
