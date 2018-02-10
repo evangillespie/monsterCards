@@ -1,6 +1,7 @@
 # Artists
 
 * Caleb Davis Wood - https://kbib.tumblr.com
+* Christian Ortiz - http://cristianortiz.com/
 
 # Printers
 
