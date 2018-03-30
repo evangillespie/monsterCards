@@ -1,10 +1,10 @@
 <div id="primary-navigation" class="dn">
   <div class="measure center pt4-ns pb3-ns ph4-ns pa3 pb1">
-    <h1 class="mt0 mb2 f3 lh-title pt2">D&amp;D 5E SRC</h1>
+    <h1 class="mt0 mb2 f3 lh-title pt2"><%= @monster_set.system %></h1>
     <ul class="list pl0 f4 mt0">
       <li class="lh-copy bb bw1 b--black-20"><a href="/" class="link light-red pv3 db underline-hover">Monsters</a></li>
       <li class="lh-copy bb bw1 b--black-20"><a href="/favourites" class="link light-red pv3 db underline-hover">Favourites</a></li>
-      <li class="lh-copy bb bw1 b--black-20"><a href="/d&d5esrd/license" class="link light-red pv3 db underline-hover">License</a></li>
+      <li class="lh-copy bb bw1 b--black-20"><%= link_to 'License', monster_set_license_path(MonsterSet.first), class: 'link light-red pv3 db underline-hover' %></li>
     </ul>
     <h2 class="mt0 mb2 f3 lh-title pt2">Monster Cards</h2>
     <ul class="list pl0 f4 mt0">

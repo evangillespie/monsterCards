@@ -17,7 +17,15 @@ var favourites = (function($, window, document) {
     }
     var favs = JSON.parse(localStorage.getItem('favourites'));
     if (!(set_name in favs)){
-      favs[set_name] = [];
+      // XXX: hack for the 5esrd slug change
+      if ('d&d5esrd' in favs){
+        favs['5esrd'] = favs['d&d5esrd'];
+        delete favs['d&d5esrd'];
+      } else {
+        favs[set_name] = [];
+      }
+      // XXX: end hack
+      // favs[set_name] = [];
       localStorage.setItem('favourites', JSON.stringify(favs));
     }
   };

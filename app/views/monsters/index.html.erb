@@ -10,7 +10,7 @@
   <%= render 'empty', empty: @monsters.empty? %>
   <%= render 'shared/monsters', monsters: @monsters %>
   <p class="measure center tc">
-    <a href="/d&d5esrd/license" class="black hover-bg-washed-yellow">License</a>
+    <%= link_to 'License', monster_set_license_path(MonsterSet.first), class: 'black hover-bg-washed-yellow' %>
   </p>
 </article>
 
