@@ -20,6 +20,7 @@ var favourites = (function($, window, document) {
       // XXX: hack for the 5esrd slug change
       if ('d&d5esrd' in favs){
         favs['5esrd'] = favs['d&d5esrd'];
+        delete favs['d&d5esrd'];
       } else {
         favs[set_name] = [];
       }
