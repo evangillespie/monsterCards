@@ -4,8 +4,8 @@ namespace :importer do
   task test_data: :environment do
 
     manual_monster_set = MonsterSet.create(
-      system: "D&D 5e SRD",
-      slug: "d&d5esrd",
+      system: "5e SRD",
+      slug: "5esrd",
       source: "Manually Typed",
       desc: "A small set of monsters which were typed out manually so that we have a few for development"
     )
@@ -177,8 +177,8 @@ namespace :importer do
     monster_list = JSON.parse(file)
 
     set = MonsterSet.create(
-      system: "D&D 5e SRD",
-      slug: "d&d5esrd",
+      system: "5e SRD",
+      slug: "5esrd",
       source: "JSON file that Colin found on reddit of SRD monsters",
       desc: "Set of all 5e monsters that are included in the SRD",
       license: "OPEN GAME LICENSE Version 1.0a",
