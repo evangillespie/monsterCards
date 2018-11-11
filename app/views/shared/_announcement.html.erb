@@ -1,9 +1,14 @@
-<div id="announcement" style="display: none;" data-announcement-id="<%=@announcement.id%>">
-  <a href="<%=@announcement.goto_path%>">
-    <p class="announce-text"><%=@announcement.text%></p>
-  </a>
-  <a id="dismiss-announcement" href="javascript:">X</a>
-</div>
+<article class="bw2 db br3-ns fixed b--silver ba bg-white bottom-1-ns right-1-ns left-1-ns bottom-0 right-0 shadow-5 z-1" id="announcement" style="display:none;">
+  <div class="ph3 pv2">
+    <p class="fw6">
+      <%=@announcement.text%>
+    </p>
+    <p>
+      <a class="link dim br2 ph3 pv2 mb2 dib white bg-light-red mr2" href="<%=@announcement.goto_path%>">Learn more</a>
+      <a href="javascript:" id="dismiss-announcement" class="black hover-bg-washed-yellow">Hide Message</a>
+    </p>
+  </div>
+</article>
 
 <% if (@announcement.goto_path != request.original_fullpath) %>
   <script>

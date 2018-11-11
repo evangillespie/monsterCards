@@ -1,7 +1,8 @@
 var announcements = (function($, window, document){
   var init = function(id){
     if (canShowAnnouncement(id) == true){
-      $("div#announcement").show();
+      console.log("foo");
+      $("#announcement").show();
       $("a#dismiss-announcement").click(function(){
         dismissAnnouncement(id);
       });
@@ -25,7 +26,7 @@ var announcements = (function($, window, document){
     var dismissed = JSON.parse(sessionStorage.getItem('announcement-dismiss'));
     dismissed.push(Number(id));
     sessionStorage.setItem('announcement-dismiss', JSON.stringify(dismissed));
-    $("div#announcement").hide();
+    $("#announcement").hide();
   };
 
   return {
