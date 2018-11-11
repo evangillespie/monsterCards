@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20181107035822) do
   enable_extension "plpgsql"
 
   create_table "announcements", force: :cascade do |t|
-    t.string   "title"
-    t.string   "slug"
+    t.string   "text"
+    t.string   "goto_path"
     t.datetime "expires_at"
   end
 

@@ -1,3 +1,14 @@
-<div id=announcement>
-	<p><%= @announcement.title %></p>
+<div id="announcement" style="display: none;" data-announcement-id="<%=@announcement.id%>">
+  <a href="<%=@announcement.goto_path%>">
+    <p class="announce-text"><%=@announcement.text%></p>
+  </a>
+  <a id="dismiss-announcement" href="javascript:">X</a>
 </div>
+
+<% if (@announcement.goto_path != request.original_fullpath) %>
+  <script>
+    $(document).ready(function(){
+      announcements.init("<%=@announcement.id%>");
+    });
+  </script>
+<% end %>
