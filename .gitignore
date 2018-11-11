@@ -57,3 +57,5 @@ Session.vim
 # auto-generated tag files
 tags
 
+# osx .DS_STORE files
+.DS_STORE
