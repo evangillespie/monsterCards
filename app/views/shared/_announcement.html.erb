@@ -1,7 +1,7 @@
 <article class="bw2 bt b--dark-green db fixed bg-green w-100 bottom-0 right-0 shadow-2 z-1" id="announcement" style="display:none;">
   <div class="ph3 pv1 f4-ns">
     <div class="center mw6">
-      <div class="flex lh-copy-l pa3 ph0-l">
+      <div class="flex lh-copy-l pa3 pb0 ph0-l">
         <%= image_tag("tiny-promo.png", class: "ba bw3 b--white shadow-3 bg-white", height: "110", width: "110") %>
         <div class="pl3 flex-auto">
           <p class="fw6 mt0">
@@ -9,7 +9,7 @@
           </p>
           <p>
           <a class="link br2 ph3 pv2 mb2 dib bg-animate bg-black hover-bg-black white mr3" href="<%=@announcement.goto_path%>">Learn more</a>
-          <a href="javascript:" id="dismiss-announcement" class="black">Hide Message</a>
+          <a href="javascript:" id="dismiss-announcement" class="black dib">Hide Message</a>
         </p>
         </div>
       </div>
