@@ -1,12 +1,19 @@
-<article class="bw2 db br3-ns fixed b--silver ba bg-white bottom-1-ns right-1-ns left-1-ns bottom-0 right-0 shadow-5 z-1" id="announcement" style="display:none;">
-  <div class="ph3 pv2">
-    <p class="fw6">
-      <%=@announcement.text%>
-    </p>
-    <p>
-      <a class="link dim br2 ph3 pv2 mb2 dib white bg-light-red mr2" href="<%=@announcement.goto_path%>">Learn more</a>
-      <a href="javascript:" id="dismiss-announcement" class="black hover-bg-washed-yellow">Hide Message</a>
-    </p>
+<article class="bw2 bt b--dark-green db fixed bg-green w-100 bottom-0 right-0 shadow-2 z-1" id="announcement" style="display:none;">
+  <div class="ph3 pv1 f4-ns">
+    <div class="center mw6">
+      <div class="flex pa3 ph0-l">
+        <%= image_tag("tiny-promo.png", class: "ba bw3 b--white shadow-3 bg-white", height: "110", width: "110") %>
+        <div class="pl3 flex-auto">
+          <p class="fw6 mt0">
+            <%=@announcement.text%>
+          </p>
+          <p>
+          <a class="link br2 ph3 pv2 mb2 dib bg-animate bg-black hover-bg-black white mr3" href="<%=@announcement.goto_path%>">Learn more</a>
+          <a href="javascript:" id="dismiss-announcement" class="black">Hide Message</a>
+        </p>
+        </div>
+      </div>
+    </div>
   </div>
 </article>
 
