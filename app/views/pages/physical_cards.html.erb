@@ -1,66 +1,75 @@
-<article id="main-content" class="mh0-ns mh2 mb2 mt5">
-  <div class="pt4-ns pb3-ns ph4-ns pa3 pb1 center measure ba bw2 b--black br3 bg-white shadow-2 lh-copy">
-    <h2 class="mv0 f3 lh-title">Kickstarter Coming Soon</h2>
-    <p>We've been designing a deck of real cards!
+<article class="helvetica mt4 pt3 bg-white">
+    <header class="bg-green sans-serif waavy">
+        <div class="center ph3 ph4-m ph5-l pa4">
+          <h3 class="f2 f1-m f-headline-l lh-title mv0">
+            <span class="bg-black-70 lh-copy white pa1 tracked-tight">
+              60 Real Life Cards <br>Coming Soon to Kickstarter
+            </span>
+          </h3>
 
-    <p><%= image_tag "physical-card-front.png" %></p>
+          <a class="dib br3 pv2 ph3 link ba bw2 black bg-green f2-ns f5 dim black mt2 " href="#mc_embed_signup">
+            Get Notified When We Go Live
+            <svg class="dib h2-ns w2-ns w1 h1 black" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Minutemailer icon</title><path d="M5.564 2.703l3.45 3.734-2.434 4.798 5.14-.921 2.34 5.646L24 2.926 5.564 2.703zm-.636 8.088l.957-.787-1.234.39-.126-.18.51-.495-.669.27C1.813 10.979 0 13.455 0 16.35c0 1.951.822 3.705 2.133 4.947-.563-.99-.885-2.134-.885-3.355 0-2.865 1.809-5.415 4.315-6.42l.315-.766-.75.331-.211-.285.011-.011zm4.364-1.97L10.89 6l9.398-2.201L9.292 8.821z"></path></svg>
+          </a>
 
-    <p class="pa3 bg-silver ba">[Insert better mockup]</p>
-    <p class="pa3 bg-silver ba">[Insert another better mockup]</p>
+        </div>
+      </header>
+      
+  <div class="serif ph3 ph4-m ph5-l f5 f3-m lh-copy">
 
-    <ul class="pl3">
-        <li>60 cards with stats for popular 5e monsters</li>
-        <li>Large format (4”x6”) cards that are easy to read</li>
-        <li>Original illustrations by <a href="https://www.artstation.com/amycornelson" class="blue">Amy Cornelson</a></li>
-      </ul>
+    <div class="cf dt-l w-100 bt b--black-10 pv4">
+      <div class="dtc-l v-mid mw6 pr3-l">
+        <a href="<%= asset_url 'cards-double.png' %>" class="dib">
+          <img class="w-100 ba b--black-30 shadow-5 link br1" src="<%= asset_path 'cards-double.png' %>" alt="">
+        </a>
+      </div>
 
-    <!-- Begin Mailchimp Signup Form -->
-    <div id="mc_embed_signup">
-    <form action="https://monstercards.us19.list-manage.com/subscribe/post?u=a290ecda5e45e7f79ea4623ee&amp;id=6ee5c842d9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate bg-green center pa4 br2-ns ba b--black-10" target="_blank" novalidate>
-      <div id="mc_embed_signup_scroll" class="cf bn ma0 pa0">
-        <legend class="pa0 f5 f4-ns fw6">Sign Up for Kickstarter Updates</legend>
-        <small class="mb3 db i">No spam, we promise!</small>
+        <div class="dtc-l v-mid f6 f5-m f4-l measure-l">
+          <div class="measure pv4-l center">
+            <p>We've been working on a deck of "real life" cards for a while now and we're almost ready to bring the project to Kickstarter.</p>
+            <ul>
+              <li>60 cards featuing monsters you use all the time</li>
+              <li>Original illustrations by <a href="https://www.artstation.com/amycornelson" class="blue">Amy Cornelson</a></li>
+              <li>Large format (4"x6") cards that are easy to read</li>
+              <li>5E Stats along with our own handy extras like quirks, descriptors and species specific names! </li>
+            </ul>  
+            <p>Run awesome games and spend less time preparing. Just like this website we're making these cards because we want to use them at our tables!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cf bt b--black-10 pv4">
+          <div class="fl w-100 w-50-l pr2-l pb3">
+            <img class="db w-100" src="<%= asset_url 'cards-double.png' %>" alt="Photo of a dusk skyline above a grassy rockface covered in trees.">
+          </div>
+          <div class="fl w-50 w-50-l pr1 pr0-l pl2-l pb3">
+            <img class="db w-100" src="<%= asset_url 'cards-double.png' %>" alt="Photo of the sea and sky on the horizon with the foundations of a demolished house.">
+          </div>
+          <div class="fl w-50 w-50-l pl2 pl0-l pr2-l pb3">
+            <img class="db w-100" src="<%= asset_url 'cards-double.png' %>" alt="Photo of the sea with mist covering the rocky formations near the shore.">
+          </div>
+          <div class="fl w-100 w-50-l pl2-l">
+            <img class="db w-100" src="<%= asset_url 'cards-double.png' %>" alt="Photo of the foundations of a building on a cliff overlooking a lighthouse.">
+          </div>
+        </div>
+
+    </div>
+
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+    <form action="https://monstercards.us19.list-manage.com/subscribe/post?u=a290ecda5e45e7f79ea4623ee&amp;id=6ee5c842d9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <div id="mc_embed_signup_scroll" class="cf w-100 bg-green pa4 ph3 ph4-m ph5-l f5 f3-m waavy">
+        <legend class="f3-ns f5 fw6 black">Get Notified When We Go Live:</legend>
+        <small class="mb3 db i">No spam or funny business, we promise.</small>
         <div class="cf">
-          <label class="clip" for="email-address">Email Address</label>
-          <input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="email address" class="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-70-ns br2-ns br--left-ns" required>
+          <label class="clip" for="email-address">Your Email Address</label>
+          <input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="your email address" class="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-70-ns br2-ns br--left-ns" required>
           <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
           <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a290ecda5e45e7f79ea4623ee_6ee5c842d9" tabindex="-1" value=""></div>
           <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-30-ns br2-ns br--right-ns" type="submit" value="Subscribe">
         </div>
       </div>
     </form>
-    </div>
-    <!--End Mailchimp Signup Form-->
-
-    <h3 class="f3 lh-title mb0">Why are we doing this?</h3>
-
-
-    <p>We want to make a useful deck of Monster Cards to use at the game table.</p>
-    
-    <p>Our plan is to take some of the most commonly used monsters and make it dead simple to run them. Players encounter a band of goblins? No problem, you've got a quick reference with all the stats plus a couple quirks and names if you need them</p> 
-
-    <p class="pa3 bg-silver ba b--near-white">[Insert Image of Goblin Card]</p>
-
-    <p>We've been prototyping cards for months and have landed on a design that is easy to use at the table. The font size is comfortable, the layout is intuitive and we're putting big, awesome, original illustrations on the other side so you can show your players what their up against without giving away names or challenge ratings.</p>
-
-    <p>If this sounds like something you want to own, sign up for our newsletter and you'll be one of the first to know when we go live.</p>
-    
-    <!-- Begin Mailchimp Signup Form -->
-    <div id="mc_embed_signup">
-        <form action="https://monstercards.us19.list-manage.com/subscribe/post?u=a290ecda5e45e7f79ea4623ee&amp;id=6ee5c842d9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate bg-green center pa4 br2-ns ba b--black-10" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll" class="cf bn ma0 pa0">
-            <legend class="pa0 f5 f4-ns fw6">Sign Up for Kickstarter Updates</legend>
-            <small class="mb3 db i">No spam, we promise!</small>
-            <div class="cf">
-              <label class="clip" for="email-address">Email Address</label>
-              <input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="email address" class="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-70-ns br2-ns br--left-ns" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a290ecda5e45e7f79ea4623ee_6ee5c842d9" tabindex="-1" value=""></div>
-              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-30-ns br2-ns br--right-ns" type="submit" value="Subscribe">
-            </div>
-          </div>
-        </form>
-        </div>
-        <!--End Mailchimp Signup Form-->
- 
+  </div>
+  <!--End Mailchimp Signup Form-->
 </article>
