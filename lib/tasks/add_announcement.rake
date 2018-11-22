@@ -3,7 +3,7 @@ namespace :add_announcement do
   task upcoming_kickstarter: :environment do
     a = Announcement.create(
       expires_at: "2019-12-25",
-      text: "Exciting new Monster Cards project coming soon, real life physical cards!",
+      text: "Exciting new Monster Cards project coming soon: real physical cards!",
       goto_path: "/physical_cards"
     )
   end
