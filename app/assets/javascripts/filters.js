@@ -1,5 +1,7 @@
 var filters = (function($, window, document) {
   var init = function(settings) {
+    // @TODO: fix the javascript error when there are no favourites. 
+    //  Caused by List.js beign called on a container containing no <li> elements
     config = {
       showSlider: settings.showSlider,
       crXp: settings.crXp,
