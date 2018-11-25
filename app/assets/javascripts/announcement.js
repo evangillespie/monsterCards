@@ -3,7 +3,8 @@ var announcements = (function($, window, document){
     if (doShowAnnouncement(id) == true){
       $("#announcement").show();
       $("a#dismiss-announcement").click(function(){
-        dismissAnnouncement(id);
+        dismissAnnouncement(id, 3);
+        $("#announcement").hide();
       });
     }
   };
@@ -22,17 +23,16 @@ var announcements = (function($, window, document){
     return true;
   };
 
-  var dismissAnnouncement = function(id){
+  var dismissAnnouncement = function(id, dismiss_days){
     if (localStorage.hasOwnProperty('announcement-dismiss') == false){
       localStorage.setItem('announcement-dismiss', JSON.stringify({}));
     }
     var dismissed = JSON.parse(localStorage.getItem('announcement-dismiss'));
     var dis_date = new Date();
-    dis_date.setDate(dis_date.getDate() + 3);
+    dis_date.setDate(dis_date.getDate() + dismiss_days);
 
     dismissed[Number(id)] = dis_date;
     localStorage.setItem('announcement-dismiss', JSON.stringify(dismissed));
-    $("#announcement").hide();
   };
 
   return {

@@ -9,7 +9,7 @@ namespace :add_announcement do
   end
 
   desc "updated kickstarter announcement"
-  task upcoming_kickstarter: :environment do
+  task upcoming_kickstarter_upd: :environment do
     a = Announcement.create(
       expires_at: "2019-12-25",
       text: "New project coming soon, real life physical cards!",
