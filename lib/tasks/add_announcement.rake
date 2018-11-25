@@ -7,4 +7,14 @@ namespace :add_announcement do
       goto_path: "/physical_cards"
     )
   end
+
+  desc "updated kickstarter announcement"
+  task upcoming_kickstarter: :environment do
+    a = Announcement.create(
+      expires_at: "2019-12-25",
+      text: "New project coming soon, real life physical cards!",
+      goto_path: "/physical_cards"
+    )
+  end
+
 end
