@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "favourites", to: "favourites#index"
   get "favourites/fetch", to: "favourites#fetch"
 
+  get 'kickstarter', to: redirect('https://www.kickstarter.com/projects/cawlin/monster-cards-dnd-5e-reference-cards-for-creature-stats')
+
   get ":page", to: "pages#show"
 
   resources :monster_sets, only: [:show], path: '' do
