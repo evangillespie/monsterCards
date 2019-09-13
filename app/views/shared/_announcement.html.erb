@@ -1,16 +1,13 @@
-<article class="bw2 bt b--dark-green db fixed bg-green w-100 bottom-0 right-0 shadow-2 z-1" id="announcement" style="display:none;">
-  <div class="pv1 ph3 f4-ns">
+<article class="db fixed w-100 bottom-0 white z-1" id="announcement" style="display:none;">
+  <div class="pv2 ph3 f4-ns shadow-2" id="floaty">
     <div class="">
-      <div class="flex lh-copy-l pa3 ph0-l">
-        <%= image_tag("tiny-promo.png", class: "ba bw1 bw3-ns b--white shadow-3 bg-white", height: "90", width: "90") %>
-        <div class="pl3 flex-auto">
-          <p class="fw6 mt0">
-            <%=@announcement.text%>
-          </p>
-          <p class="mb0">
-          <a class="link br2 ph2 pv2 mb2 dib bg-animate bg-black hover-bg-black white mr2" href="<%=@announcement.goto_path%>" target="_blank">Learn more</a>
-          <a href="javascript:" id="dismiss-announcement" class="black dib">Hide</a>
-        </p>
+      <div class="flex lh-copy-l pa2-ns ph0-l">
+        <div class="dn db-ns ma0"><%= image_tag("kickstarter-banner.png", class: "shadow-3 bg-white", width: "180", height: "101") %></div>
+        <div class="pl3-ns flex-auto">
+          <p class="fw6 ma0 lh-copy">
+            Monster Cards Kickstarter is live!<br>
+          <a class="link br2 ph2 pv2 mb2 dib bg-animate black mr2" style="background-color: #05ce78;" href="https://www.kickstarter.com/projects/cawlin/monster-cards-dnd-5e-reference-cards-for-creature-stats?ref=6p8txq" target="_blank">Back Our Project</a>
+          <a href="javascript:" id="dismiss-announcement" class="light-gray dib">Hide</a>
         </div>
       </div>
     </div>
