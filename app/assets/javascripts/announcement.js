@@ -1,4 +1,5 @@
 var announcements = (function($, window, document){
+  // @TODO: rip out the announcement id and database stuff. Just hard code the rare annoucment
   var init = function(id){
     if (doShowAnnouncement(id) == true){
       $("#announcement").show();
