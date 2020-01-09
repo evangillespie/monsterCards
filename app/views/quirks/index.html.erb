@@ -1,0 +1,21 @@
+<h1>Quirks form</h1>
+
+<div>
+  <p>What's a <%= @category.category %> for a <%= @category.monster_name %>?</p>
+</div>
+
+<form class="pv2 ph2 bb bw2 b--black bg-light-red" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :quirk_category_id, @category.id %>
+  <fieldset class="cf bn pa0">
+    <div class="cf tc measure center">
+      <input class="input-reset pa2 tc w-100 br3 ba bw2 b--black" type="text" name="desc" id="desc">
+      <!-- hidden submit button for accessibility -->
+      <input class="f6 button-reset pv1 bn bg-black white pointer br2 w-100 mt1" type="submit" value="Submit">
+    </div>
+  </fieldset>
+</form>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>

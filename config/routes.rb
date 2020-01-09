@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: 'monsters#index'
 
   get "favourites", to: "favourites#index"
@@ -6,13 +7,14 @@ Rails.application.routes.draw do
 
   get 'kickstarter', to: redirect('https://www.kickstarter.com/projects/cawlin/monster-cards-dnd-5e-reference-cards-for-creature-stats?ref=6p8txq')
 
-  get ":page", to: "pages#show"
+  resources :quirks, only: [:index, :create]
 
   resources :monster_sets, only: [:show], path: '' do
     get '/license', to: 'monster_sets#show'
     resources :monsters, only: [:index, :show], path: ''
   end
 
+  get ":page", to: "pages#show"
   get '*unmatched_route', to: 'application#not_found'
 
 end
