@@ -9,12 +9,15 @@ class QuirksController < ApplicationController
   end
 
   def create
-    Quirk.create!(
-      quirk_category_id: params[:quirk_category_id],
-      desc: params[:desc]
-    )
+    if params[:desc].present?
+      Quirk.create!(
+        quirk_category_id: params[:quirk_category_id],
+        desc: params[:desc]
+      )
 
-    flash[:notice] = "Submission successfull"
+      flash[:notice] = "Submission successfull"
+    end
+
     redirect_to quirks_path
   end
 end
