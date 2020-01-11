@@ -1,27 +1,34 @@
-<h1>Quirks form</h1>
+<article id="main-content" class="mh0-ns mh2 mb2 mt5">
+  <div class="pt4-ns pb3-ns ph4-ns pa3 pb1 center measure ba bw2 b--black br3 bg-white shadow-2 relative">
+    <h2 class="mt0 mb3 f3 lh-title bb bw2"><%= @category.monster_name %> <%= @category.category %></h2>
 
-<div>
-  <p>What's a <%= @category.category %> for a <%= @category.monster_name %>?</p>
-</div>
+    <section class="db br2 bg-light-gray ba b--black-10">
+      <form class="mv2" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :quirk_category_id, @category.id %>
+        <fieldset class="cf bn">
+          <div class="cf measure center">
+            <label class="db pb2" for="desc">
+              What's a...<strong><%= @category.category %> </strong>for a<strong> <%= @category.monster_name %></strong>?
+            </label>
+            <input class="f5 input-reset pa2 w-100 br3 ba bw1 b--black mb2" autofocus min="1" max="120" type="text" name="desc" id="desc">
+            <!-- hidden submit button for accessibility -->
+            <input class="f6 button-reset pv2 ph4 bn bg-black white pointer br2 dim" type="submit" value="Submit">
+            <a href="/quirks" class="blue f6 button-reset pa2 bn pointer br2 mt1">Skip &#8250;</a>
+          </div>
+        </fieldset>
+      </form>
+    </section>
 
-<form class="pv2 ph2 bb bw2 b--black bg-light-red" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= hidden_field_tag :quirk_category_id, @category.id %>
-  <fieldset class="cf bn pa0">
-    <div class="cf tc measure center">
-      <input class="input-reset pa2 tc w-100 br3 ba bw2 b--black" type="text" name="desc" id="desc">
-      <!-- hidden submit button for accessibility -->
-      <input class="f6 button-reset pv1 bn bg-black white pointer br2 w-100 mt1" type="submit" value="Submit">
-    </div>
-  </fieldset>
-</form>
-
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
-
-<div>
-  <% @existing_quirks.each do |q| %>
-    <p><%= q.desc %></p>
-  <% end %>
-</div>
+    <% if @existing_quirks.present? %>
+      <section class="ma0">
+        <h2 class="mb1 f3 lh-title pt2">Submissions:</h2>
+        <p class="bt bw2 mt1 pv2">
+          <% @existing_quirks.each do |q| %>
+            <span class="dib mr1 mb2 ba pa2 br1 b--black-20 b"><%= q.desc %></span>
+          <% end %>
+        </p>
+      </section>
+    <% end %>
+  </div>
+</article>
