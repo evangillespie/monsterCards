@@ -1,34 +1,50 @@
 <article id="main-content" class="mh0-ns mh2 mb2 mt5">
-  <div class="pt4-ns pb3-ns ph4-ns pa3 pb1 center measure ba bw2 b--black br3 bg-white shadow-2 relative">
-    <h2 class="mt0 mb3 f3 lh-title bb bw2"><%= @category.monster_name %> <%= @category.category %></h2>
+  <div class="center measure ba bw2 b--black br3 bg-white shadow-2 relative">
+    <% if flash[:notice] %>
+      <div class="pa2 pv2 bg-green w-100 f6 white">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 
-    <section class="db br2 bg-light-gray ba b--black-10">
-      <form class="mv2" method="post">
+    <section class="db bg-near-white pa3 ma0 bb b--black-20">
+      <form class="" method="post" autocomplete="off">
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <%= hidden_field_tag :quirk_category_id, @category.id %>
-        <fieldset class="cf bn">
+        <fieldset class="cf bn pa0">
           <div class="cf measure center">
             <label class="db pb2" for="desc">
-              What's a...<strong><%= @category.category %> </strong>for a<strong> <%= @category.monster_name %></strong>?
+              What's a...<strong><%= @category.category %>
+              </strong>for a<strong>
+                <%= @category.monster_name %></strong>?
             </label>
-            <input class="f5 input-reset pa2 w-100 br3 ba bw1 b--black mb2" autofocus min="1" max="120" type="text" name="desc" id="desc">
+            <input class="f5 input-reset pa2 w-100  ba bw1 b--black-50 mb2" autofocus="autofocus" min="1" max="120" type="text" name="desc" id="desc" required="required">
             <!-- hidden submit button for accessibility -->
             <input class="f6 button-reset pv2 ph4 bn bg-black white pointer br2 dim" type="submit" value="Submit">
-            <a href="/quirks" class="blue f6 button-reset pa2 bn pointer br2 mt1">Skip &#8250;</a>
+            <a href="/quirks" class="blue f6 button-reset pa2 bn pointer br2 mt1 fr">Skip This One &#8250;</a>
           </div>
         </fieldset>
       </form>
     </section>
 
-    <% if @existing_quirks.present? %>
-      <section class="ma0">
-        <h2 class="mb1 f3 lh-title pt2">Submissions:</h2>
-        <p class="bt bw2 mt1 pv2">
+    <section class="ma0 pa3">
+      <h2 class="ma0 f4 lh-title pt2"><%= @category.monster_name %>
+        <%= @category.category %>
+        Submissions</h2>
+      <% if @existing_quirks.present? %>
+        <p class="mt2 mb0">
           <% @existing_quirks.each do |q| %>
-            <span class="dib mr1 mb2 ba pa2 br1 b--black-20 b"><%= q.desc %></span>
+            <span class="dib mr1 mb2 ba pa2 b--black-20 b fw6 bg-washed-yellow"><%= q.desc %></span>
           <% end %>
         </p>
-      </section>
-    <% end %>
+      <% else %>
+        <p class="i">No Submissions Yet. Be the first!</p>
+      <% end %>
+    </section>
+
+    <footer class="mh3 bt b--black-20 f6">
+      <p>We're crowdsourcing quirks for the
+        <a href="#" class="blue">Monster Cards Kickstarter</a>!
+      </p>
+    </footer>
   </div>
 </article>

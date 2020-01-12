@@ -1,5 +1,5 @@
 class QuirksController < ApplicationController
-  
+
   def index
     @category = QuirkCategory.find(rand(QuirkCategory.count)+1)
 
@@ -15,7 +15,7 @@ class QuirksController < ApplicationController
         desc: params[:desc]
       )
 
-      flash[:notice] = "Submission successfull"
+      flash[:notice] = "Submission saved 👍"
     end
 
     redirect_to quirks_path
