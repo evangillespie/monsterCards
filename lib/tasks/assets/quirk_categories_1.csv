@@ -1,5 +1,63 @@
 monster_name,category
-Gnoll,Clan Symbol
-Gnoll,Behaviour Quirk
-Gnoll,Physical Trait
+Bandit,Gang Symbol
+Bandit,Failed Profession
+Cave Bear,Physical Trait
+Cave Bear,Trace of Bear
+Cave Bear,Behaviour Quirk
+Cultist,Occult Symbol
+Cultist,Behaviour Quirk
+Drow,Physical Trait
+Drow,Name
+Druid,Natural token
+Druid,Nickname
 Gargoyle,Grotesque Feature
+Gargoyle,Statue Pose
+Giant Centipede,Strange Marking
+Giant Centipede,Hiding Spot
+Giant Octopus,Strange Item
+Giant Octopus,Existing Wound
+Giant Rat,Physical Abnormality
+Giant Rat,Motivation to Attack
+Giant Snake,Unique Skin Pattern
+Giant Snake,Effect of Venom
+Giant Spider,Distinguishing Marking
+Giant Spider,Effect of Venom
+Gnoll,Clan Symbol
+Gnoll,Flaw
+Guard,Personal Secret
+Guard,Flaw
+Hobgoblin,Martial Specialty
+Hobgoblin,Animal Companion
+Homunculus,Material Composition
+Homunculus,Grotesque Form
+Knight,Shameful Secret 
+Knight,Nickname
+Kobold,Irrational Compulsion
+Kobold,Trinket
+Lizardfolk,Personal Bond
+Lizardfolk,Crafted Item
+Mage,Hidden Weakness
+Mage,Specialty
+Mastiff,Physical Trait
+Mastiff,Background
+Ogre,Irrational Fear
+Ogre,Favourite Insult
+Orc,Given Name
+Orc,Tribe Name
+Orc,Tribe Symbol
+Owlbear,Physical Trait
+Owlbear,Sign of Owlbear
+Phase Spider,Battle Tactic
+Phase Spider,Physical Markings
+Skeleton,Physical Trait
+Skeleton,Habitual Behaviour
+Spy,Personality Quirk
+Spy,Alias
+Thug,Hidden Weakness
+Thug,Claim to fame
+Troll,Mutation
+Troll,Behaviour Quirk
+Wolf,Physical Trait
+Wolf,Sign of Wolf
+Zombie,Physical Trait
+Zombie,Hideous Form
