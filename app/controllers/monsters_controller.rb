@@ -1,7 +1,7 @@
 class MonstersController < ApplicationController
 
   def index
-    @title = "Monsters - #{@monster_set.system}"
+    @title = "Monsters - 5e SRD"
     @monsters = Monster.
       where(monster_set_id: @monster_set.id).
       order(:xp, :name)
