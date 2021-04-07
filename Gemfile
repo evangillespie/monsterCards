@@ -7,7 +7,7 @@ gem 'pg', '~> 0.19'
 
 # ruby/rails
 gem 'jbuilder', '~> 2.5'
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.12'
 
 # assets
 gem 'coffee-rails', '~> 4.2'
