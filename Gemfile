@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.0'
 
 # core
-gem 'rails', '5.0.1'
+gem 'rails', '5.1.7'
 gem 'pg', '~> 0.19'
 
 # ruby/rails
