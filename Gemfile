@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.4.0'
+ruby '3.0.2'
 
 # core
-gem 'rails', '5.1.7'
-gem 'pg', '~> 0.19'
+gem 'rails', '6.1.4'
+gem 'pg', '~> 1.0'
 
 # ruby/rails
 gem 'jbuilder', '~> 2.5'
