@@ -12,7 +12,7 @@
 <meta name="msapplication-config" content="/assets/favicon/browserconfig-9d70af17780cdff52a99519a9c9d7da8eff5d83d1a3d77ab89f27b1e2049bff4.xml">
 <meta name="theme-color" content="#ffffff">
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="G5H75v78zt0HgyIi/FrD2A8THlUrtT3IdNJjor5ivBhSXZe8m1QKzRKGjmBOERt6K5Jw0+zYoMC8ELFvgMIwnA==" />
+<meta name="csrf-token" content="WY2SZidFpjE33Oh8WJRKih06Tl+tDhSlTS008P9ppcwXGcvrnDi+Yx1E6eC3C4WtWPYD5BUw3uUXj7jsUt6Mog==" />
     <link rel="stylesheet" media="all" href="/assets/a-nouislider.min.self-775e02492420a0a63a1729e55939abb82eab531916e74404dd683e9e60c7a529.css?body=1" data-turbolinks-track="reload" />
 <link rel="stylesheet" media="all" href="/assets/favourites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
 <link rel="stylesheet" media="all" href="/assets/global.self-3c9fe99172d83f83b87de9d0ceefd0b89e86c323ac16827a09d14a2e193f01b4.css?body=1" data-turbolinks-track="reload" />
