@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Gynosphinx - 5e SRD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon-fd3c2dace36c1c901b7e9f87f4188f8170b58c75213a85818653ccd451c8bb55.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32-d93e46663c1b28618ac95034befdc5a2ef67494e90da0dca801bbeb34854e472.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16-84e6873b3646834d66faff5d132163c83be444f27d00cad4e1c11c5b67c3db26.png">
+<link rel="manifest" href="/assets/favicon/manifest-4d48c917d3665fd8d120ba1d8f36efcd31a1c061d7f162bbc633e366a689fd34.json">
+<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab-960ba35fcd778a4c1d77cde89a5c4301d4c69c98883d8d02798471e7d7caa68e.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/favicon/favicon-433cd088828f2e596a3d7a5f38ce0d5aab1e87fa292ed2c92ad3fe8b7748d20e.ico">
+<meta name="msapplication-config" content="/assets/favicon/browserconfig-9d70af17780cdff52a99519a9c9d7da8eff5d83d1a3d77ab89f27b1e2049bff4.xml">
+<meta name="theme-color" content="#ffffff">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="dVwdE5tyhZIfordm/dTcQNj4XMJZ3I4vG09e0e+bQ8vMSJCy3ULgx+hcLmNo98s3C/weA5WcOX/NxAIU5wn23Q==" />
+    <link rel="stylesheet" media="all" href="/assets/a-nouislider.min.self-775e02492420a0a63a1729e55939abb82eab531916e74404dd683e9e60c7a529.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/favourites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/global.self-3c9fe99172d83f83b87de9d0ceefd0b89e86c323ac16827a09d14a2e193f01b4.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/quirks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/application.self-84c350b886d03e9066dc64982ddbf090ed69d7a43637e94272c82e9c1ba3b150.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/tachyons.self-edd6b0e95931ba011b4440e43464761e4954962e265e4ef86149f48993c2e7cc.css?body=1" data-turbolinks-track="reload" />
+    <script src="/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/list.self-e2d15ddda7c857d7d96f77f830dbc3c4d372b1ecf3957fa35051a40278d517a6.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/announcement.self-9bb62d9e7f8a79868f06355638efea51ab193689ac095f9438103c870039ff24.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/action_cable.self-13f1b5d63dbc0933b55238790da327c2ceb377614aab135d67413a08bb4e600b.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/favourites.self-485f67735fe9cc62e7d61a4fb42a0883dd813dfb2121a59881ab9d13f73ecf7d.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/filters.self-905624af7d8782a665e0a2c934b86ff8209548c495a25ff5a2a6f54c7656de05.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/nouislider.min.self-cbf8740e4f61b9a0d7e1d5f5bf27ada8307e0847575cf4c665d5338e49fe4154.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/quirks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/van11y-accessible-modal-window-aria.min.self-7e2d11bc9adc15aea226582c885888dc6036d94957bcbb2c558dae57ac1d6d67.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/application.self-ffa0a138ff4774d4aff13c524f23569504dca67e77675319589a652f5da40ee0.js?body=1" data-turbolinks-track="reload"></script>
+    
+  </head>
+
+  <body class="bg-washed-green avenir">
+  <a href="#main-content" class="clip">Skip to Main Content</a>
+
+    <header class="fixed bg-black top-0 left-0 w-100 shadow-2 z-1">
+  <nav class="measure center cf">
+    <a class="link white dib fl ph2 pv3 underline-hover" href="/">
+      <h1 class="f5 normal ma0">
+      5e SRD Monsters
+      </h1>
+    </a>
+    <a class="link white dib fr ph2 pv3 js-modal underline-hover" href="" data-modal-prefix-class="primary-menu" data-modal-content-id="primary-navigation" data-modal-close-img="https://microicon-clone.vercel.app/x/FF725C/24" id="label_modal_6">Menu</a>
+    <a class="link white dib fr ph2 pv3 underline-hover" href="/favourites">Favourites</a>
+  </nav>
+
+  
+  
+</header>
+
+    <article id="main-content" class="mh0-ns mh2 mb2 mt5">
+  <div class="pt4-ns pb3-ns ph4-ns pa3 pb1 center measure ba bw2 b--black br3 bg-white shadow-2 relative">
+
+    <a href="javascript:" data-monster-set="5esrd" data-monster="gynosphinx" class="favourite-toggle absolute pa2 top-0 right-0 top-1-ns right-1-ns v-mid" role="button">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 13 14" class="icon-favourite">
+        <path d="M13 5.055q0 0.172-0.203 0.375l-2.836 2.766 0.672 3.906q0.008 0.055 0.008 0.156 0 0.164-0.082 0.277t-0.238 0.113q-0.148 0-0.312-0.094l-3.508-1.844-3.508 1.844q-0.172 0.094-0.312 0.094-0.164 0-0.246-0.113t-0.082-0.277q0-0.047 0.016-0.156l0.672-3.906-2.844-2.766q-0.195-0.211-0.195-0.375 0-0.289 0.438-0.359l3.922-0.57 1.758-3.555q0.148-0.32 0.383-0.32t0.383 0.32l1.758 3.555 3.922 0.57q0.438 0.070 0.438 0.359z"></path>
+      </svg>      
+      <span class="clip">Add Gynosphinx to Favourites</span>
+    </a>
+
+    <h2 class="mv0 f2-ns f3 lh-title">Gynosphinx</h2>
+    <p class="i mt0 lh-copy ">
+      <span class="b">Challenge 11 (7,200 XP)</span>,
+      Large monstrosity
+      
+      , lawful neutral
+    </p>
+
+    <section class="bt bw2">
+      <p class="f4-ns lh-copy">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="16" height="16"><path d="M414.9 24C361.8 24 312 65.7 288 89.3 264 65.7 214.2 24 161.1 24 70.3 24 16 76.9 16 165.5c0 72.6 66.8 133.3 69.2 135.4l187 180.8c8.8 8.5 22.8 8.5 31.6 0l186.7-180.2c2.7-2.7 69.5-63.5 69.5-136C560 76.9 505.7 24 414.9 24z" style="fill: #FF4136;"/></svg> <abbr title="Hit Points" class="b">HP</abbr> 136 (16d10)
+        
+      <span class="ph2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16"><path d="M466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3z" style="fill: #19A974;" /></svg>
+        <abbr title="Armor Class" class="b">AC</abbr> 17
+      </span>
+
+      <span class="dib">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16"><path d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z" style="fill: #408BC9;"/></svg>
+        <abbr title="Speed" class="b">SPD</abbr> 40 ft., fly 60 ft.
+      </span>
+      </p>
+    </section>
+
+    <section class="bt bw2">
+      <table class="mv3 w-100 lh-solid">
+        <caption class="clip">Ability Scores</caption>
+        <tr class="tc f4-ns">
+          <th>STR</th>
+          <th>DEX</th>
+          <th>CON</th>
+          <th>INT</th>
+          <th>WIS</th>
+          <th>CHA</th>
+        </tr>
+        <tr class="tc tracked-tight">
+          <td>
+            <small class="gray">18</small> <strong class="fw5">(+4)</strong class="fw5"></td>
+          <td><small class="gray">15</small> <strong class="fw5">(+2)</strong class="fw5"></td>
+          <td><small class="gray">16</small> <strong class="fw5">(+3)</strong class="fw5"></td>
+          <td><small class="gray">18</small> <strong class="fw5">(+4)</strong class="fw5"></td>
+          <td><small class="gray">18</small> <strong class="fw5">(+4)</strong class="fw5"></td>
+          <td><small class="gray">18</small> <strong class="fw5">(+4)</strong class="fw5"></td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="bt bw2">
+      <dl class="lh-copy">
+          <dt class="fl b mr1">Skills</dt>
+          <dd class="ml0">
+          Arcana: +12, History: +12, Perception: +8, Religion: +8
+          </dd>
+          <dt class="fl b mr1">Senses</dt>
+          <dd class="ml0">Truesight 120 ft., passive perception 18</dd>
+        <dt class="fl b mr1">Languages</dt>
+        <dd class="ml0">Common, sphinx</dd>
+          <dt class="fl b mr1">Damage Resistances</dt>
+          <dd class="ml0">bludgeoning, piercing, and slashing from nonmagical weapons</dd>
+          <dt class="fl b mr1">Damage Immunities</dt>
+          <dd class="ml0">psychic</dd>
+          <dt class="fl b mr1">Condition Immunities</dt>
+          <dd class="ml0">charmed, frightened</dd>
+      </dl>
+    </section>
+
+      <section class="bt bw2">
+        <dl class="lh-copy">
+            <dt class="fl b mr1">Inscrutable</dt>
+            <dd class="ml0 mb3">The sphinx is immune to any effect that would sense its emotions or read its thoughts, as well as any divination spell that it refuses. Wisdom (Insight) checks made to ascertain the sphinx&#39;s intentions or sincerity have disadvantage.</dd>
+            <dt class="fl b mr1">Magic Weapons</dt>
+            <dd class="ml0 mb3">The sphinx&#39;s weapon attacks are magical.</dd>
+            <dt class="fl b mr1">Spellcasting</dt>
+            <dd class="ml0 mb3">The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following wizard spells prepared:
+
+• Cantrips (at will): mage hand, minor illusion, prestidigitation
+• 1st level (4 slots): detect magic, identify, shield
+• 2nd level (3 slots): darkness, locate object, suggestion
+• 3rd level (3 slots): dispel magic, remove curse, tongues
+• 4th level (3 slots): banishment, greater invisibility
+• 5th level (1 slot): legend lore</dd>
+        </dl>
+      </section>
+
+      <h2 class="mt0 mb2 f3 lh-title pt2">Actions</h2>
+      <section class="bt bw2">
+        <dl class="lh-copy">
+            <dt class="fl b mr1">Multiattack</dt>
+            <dd class="ml0 mb3">The sphinx makes two claw attacks.</dd>
+            <dt class="fl b mr1">Claw</dt>
+            <dd class="ml0 mb3">Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.</dd>
+        </dl>
+      </section>
+
+      <h2 class="mt0 mb2 f3 lh-title pt2">Legendary Actions</h2>
+      <section class="bt bw2">
+        <dl class="lh-copy">
+            <dt class="fl b mr1">Claw Attack</dt>
+            <dd class="ml0 mb3">The sphinx makes one claw attack.</dd>
+            <dt class="fl b mr1">Teleport (Costs 2 Actions)</dt>
+            <dd class="ml0 mb3">The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.</dd>
+            <dt class="fl b mr1">Cast a Spell (Costs 3 Actions)</dt>
+            <dd class="ml0 mb3">The sphinx casts a spell from its list of prepared spells, using a spell slot as normal.</dd>
+        </dl>
+      </section>
+
+
+    <footer class="bt bw2 lh-copy">
+      <p><a class="black hover-bg-washed-yellow" href="/5esrd/gynosphinx">Gynosphinx</a>
+      from 
+      <a href="/" class="black hover-bg-washed-yellow">5e SRD</a></p>
+    </footer>
+  </div>
+</article>
+
+<article class="br3 ba b--black-10 bg-white mv4 mw5 center absolute-l top-2 right-1 ">
+  <img src="/assets/evan-and-colin-monster-cards-5e-product-4bf7914325e238b917ba53d31ebc6ec06e698e1359953ac150626c9eeb6ff424.png" alt="" class="db w-100 br2 br--top" >
+  <div class="pa2 ph3-ns pb3-ns">
+    <div class="dt w-100 mt1">
+      <div class="dtc">
+        <h1 class="f5 mv0">Buy Physical Monster Cards</h1>
+      </div>
+    </div>
+    <p class="f6 lh-copy measure mt2 mid-gray">
+      We made a deck of 70 premium cards with original art and quirks!
+    </p>
+    <a class="f6 link dim br2 ph3 pv2 mb0 dib white bg-near-black mb1" href="https://evanandcolin.com">Check It Out</a>
+  </div>
+</article>
+
+<script>
+  $(document).ready(function() {
+    favourites.init({set:"5esrd"});
+  });
+</script>
+    
+    <div id="primary-navigation" class="dn">
+  <div class="measure center pt4-ns pb3-ns ph4-ns pa3 pb1">
+  
+  <h2 class="mt0 mb2 f3 lh-title pt2">Monster Cards</h2>
+  <ul class="list pl0 f4 mt0">
+    <li class="lh-copy bb bw1 b--black-20"><a href="/about" class="link light-red pv3 db underline-hover">About</a></li>
+    <li class="lh-copy bb bw1 b--black-20"><a href="/change_log" class="link light-red pv3 db underline-hover">Changelog</a></li>
+    <li class="lh-copy bb bw1 b--black-20"><a href="https://evanandcolin.com" class="link light-red pv3 db underline-hover">Buy Physical Monster Cards</a></li>
+  </ul>
+
+    <h2 class="mt0 mb2 f3 lh-title pt2">5e SRD</h1>
+    <ul class="list pl0 f4 mt0">
+      <li class="lh-copy bb bw1 b--black-20"><a href="/" class="link light-red pv3 db underline-hover">Monsters</a></li>
+      <li class="lh-copy bb bw1 b--black-20"><a href="/favourites" class="link light-red pv3 db underline-hover">Favourites</a></li>
+      <li class="lh-copy bb bw1 b--black-20"><a class="link light-red pv3 db underline-hover" href="/5esrd/license">License</a></li>
+    </ul>
+  </div>
+</div>
+  </body>
+</html>
