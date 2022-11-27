@@ -52,10 +52,12 @@
 
   if (localStorage.hasOwnProperty('favourites')) {
     if ("<%= @monster_set.slug.html_safe %>" in JSON.parse(localStorage.getItem('favourites'))) {
-      $('article#monster-list').empty();
       favoritedMonsterKeys = JSON.parse(localStorage.favourites)["5esrd"];
       favoritedMonsters = monsters.filter(monster => favoritedMonsterKeys.includes(slugifyName(monster.name)));
-      favoritedMonsters.map(favMonster => $('article#monster-list').append(resolveFavouritedMonster(favMonster)));
+      if (favoritedMonsters.length > 0) {
+        $('article#monster-list').empty();
+        favoritedMonsters.map(favMonster => $('article#monster-list').append(resolveFavouritedMonster(favMonster)));
+      }
       favourites.init({set:"5esrd"});
     };
   };
