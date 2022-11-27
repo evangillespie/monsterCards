@@ -1,5 +1,22 @@
 namespace :importer do
   
+  desc 'Generate static site in ./out/ directory'
+  task :generate, :environment do
+    Dir.mkdir 'out' unless File.exist? 'out'
+    Dir.chdir 'out' do
+      `wget -mnH http://localhost:3000/`
+    end
+    `rsync -ruv --exclude=.svn/ public/ out/`
+  end
+
+  desc 'Run tiny HTTP server from ./out/ directory'
+  task :server, :environment do
+    Dir.chdir 'out' do
+      puts 'Started HTTP server at http://localhost:8000/. Press CTRL+C to exit.'
+      `static -p 8000`
+    end
+  end
+
   desc "Add a small amount of sample monster data to the database for development"
   task test_data: :environment do
 

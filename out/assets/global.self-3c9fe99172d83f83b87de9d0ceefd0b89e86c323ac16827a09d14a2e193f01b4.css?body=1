@@ -1,0 +1,159 @@
+body {
+	/* triangle svg pattern */
+	background-color: #e8fdf5;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2319a974' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#floaty {
+	 background-color: #2b2727;;
+}
+
+.waavy {
+  background-color: #19a974;
+background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23137752' fill-opacity='0.11' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.hidden {
+  display: none
+}
+
+/* override tachyons style */
+abbr[title] {
+  text-decoration: none !important;
+}
+
+/* favourite icon */
+.favourite-toggle.faved .icon-favourite {fill: #FFB700; stroke: none;}
+.favourite-toggle.faved:hover .icon-favourite {fill: #FFB700; stroke: none;}
+
+.favourite-toggle .icon-favourite {fill: none; stroke: #777;}
+.favourite-toggle:hover .icon-favourite {fill:none;  stroke: #FFB700;}
+
+/* favourite icon animation */
+@keyframes faveIn {
+  0% { opacity:0; transform: scale(1.4); }
+  50% { opacity:50%; transform: scale(0.9); }
+  100% { opacity:1; transform: scale(1); }
+}
+
+.faved {
+    opacity: 0;  /* make things invisible upon start */
+    animation: faveIn ease-out 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    animation-fill-mode: forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    animation-duration: .3s;
+}
+
+/* navigation icons */
+header .icon-chevron-left {fill: white;}
+
+/* van11y modal */
+
+/* needed for old browsers */
+dialog {
+  display: block;
+  border: 0;
+}
+
+/* removes scroll when modal is opened */
+.no-scroll {
+  overflow: hidden;
+}
+
+.primary-menu-modal-overlay[data-background-click="disabled"] {
+  cursor: auto;
+}
+
+.primary-menu-modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: .8;
+  z-index: 666;
+  cursor: pointer;
+}
+
+.primary-menu-modal {
+  left: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 667;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  background: white; /* fallback CSS IE9 */
+  padding: 0;
+}
+.primary-menu-modal-close {
+  position: absolute;
+  top: .75em;
+  right: .75em;
+  background: transparent;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.primary-menu-modal  {
+  animation: fadewhite ease 0.2s 1 normal ;
+}
+
+@keyframes fadewhite {
+  0% {
+    position: absolute;
+    top: -100%;
+    opacity: 0.2;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* no ui slider */
+
+/* no overlapping handles */
+
+.noUi-horizontal {
+  padding-right: 13px;
+  padding-left: 13px;
+}
+
+/* base styling */
+
+.noUi-target {
+  height: 10px;
+  border: 2px solid black;
+  background: white;
+  border-radius: 0;
+}
+
+.noUi-connect {
+  background: #19A974;
+  border: none;
+  border-radius: 0;
+}
+
+/* handle styling */
+
+.noUi-horizontal .noUi-handle {
+  height: auto;
+  top: -14px;
+  padding: 4px 0;
+  border: 4px solid black;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.noUi-handle:after, .noUi-handle:before {
+  content: none;
+}
+
+.noUi-horizontal .noUi-handle small {
+  font-size: 0.5rem;
+}
